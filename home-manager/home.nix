@@ -78,8 +78,7 @@
     postgresql
     sqls
     python311Packages.psycopg2
-    astro-language-server
-    svelte-language-server
+    nodePackages_latest.svelte-language-server
   ];
 
   # Neovim configuration
