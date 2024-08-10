@@ -80,10 +80,12 @@
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
           inputs.stylix.nixosModules.stylix 
-          {
-            virtualisation.docker = {
-              enable = true;
-               defaultNetwork.settings.dns_enabled = true;
+          { # Enables docker in rootless mode
+            virtualisation = {
+              docker.rootless = {
+                enable = true;
+                setSocketVariable = true;
+              };
             };
           }
         ];
