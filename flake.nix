@@ -81,11 +81,8 @@
           ./nixos/configuration.nix
           inputs.stylix.nixosModules.stylix 
           {
-            virtualisation.podman = {
+            virtualisation.docker = {
               enable = true;
-               # Create a `docker` alias for podman, to use it as a drop-in replacement
-               dockerCompat = true;
-               # Required for containers under podman-compose to be able to talk to each other.
                defaultNetwork.settings.dns_enabled = true;
             };
           }
@@ -106,8 +103,8 @@
   # sound.enable = true;
   security.rtkit.enable = true;
 
-  # Enable Podman
-  virtualisation.podman.enable = true;
+  # Enable Docker
+  virtualisation.docker.enable = true;
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'

@@ -144,8 +144,9 @@
     yazi
     fuzzel
     tmux
-    podman
-    podman-compose
+    docker
+    docker-compose
+    postman
 
     # Terminal
     zsh
@@ -245,7 +246,7 @@
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = [ "networkmanager" "wheel" "podman" ];
+      extraGroups = [ "networkmanager" "wheel" "docker" ];
     };
   };
   # This setups a SSH server. Very important if you're setting up a headless system.
