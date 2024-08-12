@@ -147,6 +147,7 @@
     docker
     docker-compose
     postman
+    transmission
 
     # Terminal
     zsh
