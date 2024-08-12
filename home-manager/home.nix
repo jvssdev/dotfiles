@@ -35,6 +35,7 @@
     ./hypridle/default.nix
     ./brave/default.nix
     ./obsidian/default.nix
+    ./transmission/default.nix
   ];
 
   home = {
