@@ -35,7 +35,6 @@
     ./hypridle/default.nix
     ./brave/default.nix
     ./obsidian/default.nix
-    ./transmission/default.nix
   ];
 
   home = {
@@ -57,7 +56,11 @@
 
   home.packages = with pkgs; [
     python311
+    python311Packages.python-lsp-server
     python311Packages.pip
+    python312Packages.isort
+    python312Packages.black
+    rubyPackages.htmlbeautifier
 
     #Neovim
     lldb
@@ -71,6 +74,7 @@
     lua-language-server
     stylua
     gopls
+    delve
     zls
     lua
     java-language-server
@@ -80,6 +84,7 @@
     sqls
     python311Packages.psycopg2
     nodePackages_latest.svelte-language-server
+    prettierd
   ];
 
   # Neovim configuration
@@ -90,6 +95,7 @@
     extraPython3Packages = (ps: with ps; [
       pynvim
      psycopg2
+     python-lsp-server
     ]);
     plugins = with pkgs.vimPlugins; [ vimPlugins.telescope.nvim vimPlugins.nvim-treesitter];
     extraPackages = with pkgs; [];

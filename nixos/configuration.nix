@@ -147,7 +147,7 @@
     docker
     docker-compose
     postman
-    transmission_4
+    transmission_4-gtk
 
     # Terminal
     zsh
