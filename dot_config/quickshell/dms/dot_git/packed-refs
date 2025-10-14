@@ -1,0 +1,20 @@
+# pack-refs with: peeled fully-peeled sorted 
+4cda1f55b6e1e922bf62fabdb0ef00f27e0cf36a refs/remotes/origin/StatusBar
+db28879185a1bd3e15ef7b3aa8c2f195a60fcf03 refs/remotes/origin/cc-editmode
+36f34389895d83cafbdd604e8ed2b93d5ca9cd04 refs/remotes/origin/copilot/fix-0d057d07-2d15-498c-b075-864eeb731955
+5d6a03df2dbb09f4d8c26d5056bc1235e6ff4d59 refs/remotes/origin/dankdash
+3eb85520408eafdfcf3649e96e4da34ef9b7be26 refs/remotes/origin/dms-niri
+e18ce7ee54fa48be57a281088a90b1d14b57c376 refs/remotes/origin/docks
+a310e3d8fa42db1b393e77731a5df561955eff74 refs/remotes/origin/master
+983d185de62d1236e7bb87def6c13aebecd7a611 refs/remotes/origin/more-loading
+b998cbd3e63ba7f4c0e49b9fcd20ad8ea71eb987 refs/remotes/origin/multidisplay
+8e103d7ba743afcab713ee953dda248a9e4763cb refs/remotes/origin/surface-colors
+11541cfe3141d6db47bbc61b40f626c150c4e41b refs/remotes/origin/wip-control-center
+63243e3ae5c177b18ab385fc7b30f2f868a6d6a1 refs/tags/v0.0.1
+13f37ed48db13ef3ac05c8fe8e8d34875964d19a refs/tags/v0.0.2
+faacdf2be32d1b245968b6de970c465f71e4e9a2 refs/tags/v0.0.3
+aec9e6c7180d03cafc3a093788b6e0ae5fd5911c refs/tags/v0.0.4
+f175c10efcb12a19b0fe8b7fa907fd982e9b1468 refs/tags/v0.0.5
+544a17b0dbe59ce7f73cf57ca6db21e6ca118c50 refs/tags/v0.0.6
+fb94dd0c4aba0c9e8951041080c45716a2e24889 refs/tags/v0.0.7
+7516d44de9998ee00620a2f6f7c15354c1256633 refs/tags/v0.0.8
