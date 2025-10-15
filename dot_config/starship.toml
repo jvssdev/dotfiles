@@ -5,11 +5,11 @@
 add_newline = true
 
 format = """
-[░▒▓](#3B4252)\
-[ ](bg:#3B4252 fg:#D8DEE9)\
-[](bg:#88C0D0 fg:#3B4252)\
+[░▒▓](#4C566A)\
+[ ](bg:#4C566A fg:#ECEFF4)\
+[](bg:#8FBCBB fg:#4C566A)\
 $directory\
-[](fg:#88C0D0 bg:#3B4252)\
+[](fg:#8FBCBB bg:#3B4252)\
 $git_branch\
 $git_status\
 [](fg:#3B4252 bg:#434C5E)\
@@ -23,7 +23,7 @@ $time\
 \n$character"""
 
 [directory]
-style = "fg:#ECEFF4 bg:#88C0D0"
+style = "fg:#4C566A bg:#8FBCBB"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
