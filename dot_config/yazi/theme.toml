@@ -1,7 +1,7 @@
 [flavor]
-use = "tokyo-night"
+use = "nord"
 # For Yazi 0.4 and above
-dark = "tokyo-night"
+dark = "nord"
 
 [status]
 sep_right = { open = "", close = "" }  
