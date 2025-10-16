@@ -11,6 +11,9 @@ image = [
 pdf = [
 	{ run = 'zathura "$@"', orphan = true, for = "unix" },
 ]
+edit = [
+	{ run = '$EDITOR "$@"', block = true, for = "unix" },
+]
 
 [open]
 rules = [
