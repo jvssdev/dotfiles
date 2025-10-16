@@ -5,4 +5,17 @@ show_hidden = true
 play = [
 	{ run = 'mpv "$@"', orphan = true, for = "unix" },
 ]
+image = [
+	{ run = 'imv "$@"', orphan = true, for = "unix" },
+]
+pdf = [
+	{ run = 'zathura "$@"', orphan = true, for = "unix" },
+]
 
+[open]
+rules = [
+	{ mime = "image/*", use = "image" },
+	{ mime = "application/pdf", use = "pdf" },
+	{ mime = "video/*", use = "play" },
+	{ mime = "audio/*", use = "play" },
+]
