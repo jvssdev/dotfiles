@@ -8,10 +8,10 @@ window-padding-x = 12
 window-padding-y = 12
 window-padding-balance = true
 window-padding-color = extend
-#background-opacity = 0.90
-#background-blur-radius = 32
+background-opacity = 0.90
+background-blur-radius = 32
 
-theme = "Oxocarbon"
+theme = "Nord"
 # Cursor Configuration
 cursor-style = block
 cursor-style-blink = true
@@ -44,4 +44,4 @@ gtk-titlebar = false
 shell-integration = detect
 shell-integration-features = cursor,sudo,title,no-cursor
 keybind = shift+enter=text:\n
-background = #000000
+# background = #000000
