@@ -6,9 +6,9 @@ return {
     priority = 1000,
     config = function()
       vim.opt.laststatus = 3
-      require("lualine").setup {
+      require("lualine").setup({
         options = {
-          theme = "iceberg_dark",
+          theme = "nord",
           icons_enabled = true,
           -- component_separators = { left = "|", right = "|" },
           -- section_separators = { left = "", right = "" },
@@ -34,7 +34,7 @@ return {
         },
         tabline = {},
         extensions = {},
-      }
+      })
     end,
   },
 }
