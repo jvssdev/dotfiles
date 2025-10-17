@@ -1,0 +1,6 @@
+brew "uv"
+brew "mpd"
+brew "mpc"
+brew "rmpc"
+brew "gopls"
+brew "golangci-lint"
