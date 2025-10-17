@@ -12,12 +12,12 @@
     "diagnostics": false
   },
   "vim_mode": true,
-  "ui_font_size": 14,
+  "ui_font_size": 15,
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "Ayu Dark"
+    "light": "Nord Light",
+    "dark": "Nord Dark"
   },
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "cursor_blink": false,
