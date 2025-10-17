@@ -5,17 +5,13 @@ After=network.target sound.target
 
 [Service]
 Type=notify
-ExecStart=/usr/bin/mpd --no-daemon
+ExecStart=/home/linuxbrew/.linuxbrew/bin/mpd --no-daemon --stdout --verbose
 Restart=on-failure
 
-ProtectSystem=strict
-ProtectHome=read-only
-PrivateTmp=yes
+# Security protections (relaxed for user service)
 NoNewPrivileges=yes
 ProtectKernelTunables=yes
 ProtectControlGroups=yes
-RestrictRealtime=yes
-ReadWritePaths=~/.config/mpd
 
 [Install]
 WantedBy=default.target
