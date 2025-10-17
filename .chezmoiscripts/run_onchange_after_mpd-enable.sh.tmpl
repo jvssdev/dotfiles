@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+
+echo "Setting up MPD systemd service..."
+
+# Reload systemd to recognize changes
+systemctl --user daemon-reload
+
+# Enable and start MPD
+systemctl --user enable mpd.service
+systemctl --user start mpd.service
+
+# Check status
+if systemctl --user is-active --quiet mpd.service; then
+    echo "✓ MPD is running!"
+    systemctl --user status mpd.service --no-pager
+else
+    echo "✗ Failed to start MPD. Check logs:"
+    journalctl --user -u mpd.service --no-pager -n 20
+    exit 1
+fi
