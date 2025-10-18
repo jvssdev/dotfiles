@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Yazi
+Comment=Blazing fast terminal file manager
+Exec=ghostty -e yazi %u
+Terminal=false
+Type=Application
+Icon=utilities-terminal
+Categories=System;FileTools;FileManager;
+MimeType=inode/directory;
