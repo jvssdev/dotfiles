@@ -1,0 +1,18 @@
+{{- /* chezmoi:template:line-endings=native */ -}}
+
+{{- $install_path := "/opt/zen-browser-bin" -}}
+{{- $install_hash := mozillaInstallHash $install_path -}}
+
+[Profile0]
+Name=Default  
+IsRelative=1
+Path=default
+Default=1
+
+[General]
+StartWithLastProfile=1
+Version=2
+
+[Install{{ $install_hash }}]
+Default=default
+Locked=1
