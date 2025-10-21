@@ -9,7 +9,7 @@ application/xhtml+xml=zen-browser.desktop
 application/x-extension-xhtml=zen-browser.desktop
 application/x-extension-xht=zen-browser.desktop
 text/html=zen-browser.desktop
-inode/directory=yazi.desktop
+inode/directory=thunar.desktop
 image/png=imv.desktop
 image/jpeg=imv.desktop
 image/gif=imv.desktop
@@ -23,7 +23,7 @@ text/plain=nvim.desktop
 text/txt=nvim.desktop
 
 [Added Associations]
-inode/directory=yazi.desktop;
+inode/directory=thunar.desktop;
 x-scheme-handler/http=zen-browser.desktop;
 x-scheme-handler/https=zen-browser.desktop;
 x-scheme-handler/chrome=zen-browser.desktop;
