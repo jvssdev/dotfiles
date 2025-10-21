@@ -1,0 +1,15 @@
+# Ignore common or general files here, if necessary
+README.md
+
+# Ignore Niri configs if NOT Niri
+{{- if ne .windowmanager "niri" }}
+.config/niri/  
+.config/quickshell/
+.config/DankMaterialShell/
+.config/dgop/
+{{- end }}
+
+# Ignore River configs if NOT River
+{{- if ne .windowmanager "river" }}
+.config/river/  
+{{- end }}

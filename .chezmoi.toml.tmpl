@@ -1,0 +1,9 @@
+{{- $windowmanager := "niri" -}}
+{{- if stat "/usr/bin/river" -}}
+{{-   $windowmanager = "river" -}}
+{{- else if stat "/usr/bin/niri" -}}
+{{-   $windowmanager = "niri" -}}
+{{- end }}
+
+[data]
+    windowmanager = "{{ $windowmanager }}"
