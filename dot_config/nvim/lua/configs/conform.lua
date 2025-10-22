@@ -21,11 +21,8 @@ local options = {
     },
     prettier = {
       prepend_args = {
-        "format",
-        "--indent-style",
-        "space",
-        "--indent-width",
-        "2",
+        "--tab-width=2",
+        "--use-tabs=false",
       },
     },
     prettierd = {
@@ -57,5 +54,4 @@ local options = {
     lsp_fallback = true,
   },
 }
-
 return options

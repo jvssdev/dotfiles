@@ -7,3 +7,4 @@
 d80754dbdff9090e8375db918693343bcb350381 3ac9b748fc1c789091869d394ae8a0ea38de162a João Víctor Santos Silva <joao.victor.ss.dev@gmail.com> 1760213113 -0300	commit: yazi change
 3ac9b748fc1c789091869d394ae8a0ea38de162a 4ae253426bc2762920f28478b76860384c74bc7b João Víctor Santos Silva <joao.victor.ss.dev@gmail.com> 1760626468 -0300	commit: theme and lazygit
 4ae253426bc2762920f28478b76860384c74bc7b 6208e44008b14a14f30d5072d17b8b540710a7a8 João Víctor Santos Silva <joao.victor.ss.dev@gmail.com> 1761096203 -0300	commit: formatters
+6208e44008b14a14f30d5072d17b8b540710a7a8 f76f9de28afabc5892cef9634c3c65c166f75d00 João Víctor Santos Silva <joao.victor.ss.dev@gmail.com> 1761096549 -0300	commit: fixing nvim formatters config
