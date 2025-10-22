@@ -2,15 +2,17 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" },
     css = { "biome" },
-    html = { "biome" },
+    html = { "prettier" },
     javascript = { "biome" },
     typescriptreact = { "biome" },
     javascriptreact = { "biome" },
-    json = { "biome" },
+    json = { "prettier" },
+    jsonc = { "prettier" },
     jsx = { "biome" },
     tsx = { "biome" },
-    markdown = { "biome" },
+    markdown = { "prettier" },
     go = { "goimports", "gofmt" },
+    yaml = { "prettier" },
   },
   formatters = {
     stylua = {
@@ -18,7 +20,13 @@ local options = {
       prepend_args = { "--indent-type", "Spaces", "--indent-width", "2" },
     },
     prettier = {
-      prepend_args = { "--tab-width", "2" },
+      prepend_args = {
+        "format",
+        "--indent-style",
+        "space",
+        "--indent-width",
+        "2",
+      },
     },
     prettierd = {
       env = {
