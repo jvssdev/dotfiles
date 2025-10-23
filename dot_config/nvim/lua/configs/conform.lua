@@ -13,6 +13,7 @@ local options = {
     markdown = { "prettier" },
     go = { "goimports", "gofmt" },
     yaml = { "prettier" },
+    qml = { "qmlformat" },
   },
   formatters = {
     stylua = {
