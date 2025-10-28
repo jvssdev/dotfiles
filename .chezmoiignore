@@ -14,6 +14,9 @@ README.md
 {{- if ne .windowmanager "river" }}
 .config/waybar/
 .config/mako/
+.config/dinit.d/
+.config/pipewire/
+.chezmoidata/
 .config/wleave/
 .config/gtklock/
 .config/xdg-desktop-portal/
