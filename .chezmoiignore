@@ -7,9 +7,15 @@ README.md
 .config/quickshell/
 .config/DankMaterialShell/
 .config/dgop/
+.config/systemd/
 {{- end }}
 
 # Ignore River configs if NOT River
 {{- if ne .windowmanager "river" }}
+.config/waybar/
+.config/mako/
+.config/wleave/
+.config/gtklock/
+.config/xdg-desktop-portal/
 .config/river/  
 {{- end }}
