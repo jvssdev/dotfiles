@@ -19,7 +19,7 @@ trim-trailing-whitespace = true
 trim-final-newlines = true
 
 [editor.indent-guides]
-render = true
+render = truetrim-trailing-whitespace 
 character = "▏" 
 
 [editor.cursor-shape]

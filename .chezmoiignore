@@ -3,9 +3,10 @@ README.md
 
 # Ignore Niri configs if NOT Niri
 {{- if ne .windowmanager "niri" }}
-.config/niri/  
+.config/niri/
 .config/quickshell/
 .config/DankMaterialShell/
+.local/state/DankMaterialShell/
 .config/dgop/
 .config/systemd/
 {{- end }}
@@ -21,5 +22,5 @@ README.md
 .config/wleave/
 .config/gtklock/
 .config/xdg-desktop-portal/
-.config/river/  
+.config/river/
 {{- end }}
