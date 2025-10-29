@@ -25,6 +25,7 @@ mouse-hide-while-typing = true
 copy-on-select = true
 confirm-close-surface = false
 
+keybind = ctrl+w=close_tab:this
 keybind = ctrl+shift+n=new_window
 keybind = ctrl+t=new_tab
 keybind = ctrl+plus=increase_font_size:1
