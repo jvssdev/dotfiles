@@ -7,7 +7,17 @@ packages:
       - nordzy-icon-theme
       - nordic-theme
       - bibata-cursor-theme
+      - anydesk-bin
     pacman:
+      - pipewire
+      - pipewire-pulse
+      - pipewire-alsa
+      - pipewire-jack
+      - pipewire-dinit
+      - pipewire-pulse-dinit
+      - wireplumber-dinit
+      - wireplumber
+      - pavucontrol
       - gtklock
       - hypridle
       - bluez
@@ -15,8 +25,16 @@ packages:
       - wpaperd
       - ghostty
       - yazi
+      - qemu-desktop
+      - libvirt
+      - virt-manager
+      - virt-viewer
+      - edk2-ovmf
+      - spice
+      - spice-gtk
+      - spice-protocol
       - qbittorrent
-      - prettier
+      - prettierd
       - biome
       - gopls
       - golangci-lint
@@ -28,6 +46,7 @@ packages:
       - gammastep
       - grim
       - fuzzel
+      - libvirt
       - slurp
       - age
       - bat
