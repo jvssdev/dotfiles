@@ -8,6 +8,7 @@ packages:
       - nordic-theme
       - bibata-cursor-theme
       - anydesk-bin
+      - lmstudio 
     pacman:
       - pipewire
       - pipewire-pulse
@@ -48,7 +49,6 @@ packages:
       - fuzzel
       - libvirt
       - slurp
-      - age
       - bat
       - zed
       - btop
