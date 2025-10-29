@@ -92,7 +92,7 @@ packages:
       - fd
       - fzf
       - lazygit
-      - neovim
+      - helix
       - ripgrep
       - starship
       - uv
