@@ -9,6 +9,7 @@ README.md
 .local/state/DankMaterialShell/
 .config/dgop/
 .config/systemd/
+.chezmoiscripts/run_onchange_after_mpd-enable.sh.tmpl
 {{- end }}
 
 # Ignore River configs if NOT River
@@ -17,10 +18,11 @@ README.md
 .config/mako/
 .config/dinit.d/
 .config/pipewire/
-.chezmoidata/
+.chezmoidata/packages.yaml
 .config/wpaperd/
 .config/wleave/
 .config/gtklock/
 .config/xdg-desktop-portal/
 .config/river/
+.chezmoiscripts/run_once_enable-services.sh
 {{- end }}
