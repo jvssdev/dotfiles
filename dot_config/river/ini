@@ -3,25 +3,27 @@
 riverctl keyboard-layout br
 riverctl xcursor-theme "Bibata-Modern-Ice" 24
 
-dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+dbus-update-activation-environment \
+  WAYLAND_DISPLAY \
+  XDG_CURRENT_DESKTOP=river \
+  XDG_SESSION_DESKTOP=river \
+  XDG_SESSION_TYPE=wayland \
+  QT_QPA_PLATFORMTHEME=qt6ct \
+  QT_QPA_PLATFORM=wayland \
+  GDK_BACKEND=wayland \
+  ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 #autostart
-riverctl spawn "rivertile -d >/dev/null 2>&1"
-riverctl spawn "pipewire -d >/dev/null 2>&1"
-riverctl spawn "mpc -d >/dev/null 2>&1"
-riverctl spawn "hypridle -d >/dev/null 2>&1"
-riverctl spawn "wpaperd -d >/dev/null 2>&1"
+riverctl spawn "pipewire"
+riverctl spawn "hypridle -c ~/.config/hypridle/hypridle.conf"
+riverctl spawn "wpaperd"
+riverctl spawn "mpd >/dev/null 2>&1 &"
 riverctl spawn "waybar -d >/dev/null 2>&1"
 #riverctl spawn "waybar -c ~/.config/waybar/river/config -s ~/.config/waybar/river/style.css"
 riverctl spawn "nm-applet --indicator"
 riverctl spawn "blueman-applet"
 riverctl spawn "mako >/dev/null 2>&1 &"
-riverctl spawn "wl-paste >/dev/null 2>&1 &"
 riverctl spawn "wl-clipboard"
-
-# Clipboard History
-riverctl spawn "wl-paste --type text --watch cliphist store"  #Stores only text data
-riverctl spawn "wl-paste --type image --watch cliphist store" #Stores only image data
 
 # screenshots
 riverctl map normal Super P spawn 'grim -g "$(slurp)" - | wl-copy'
@@ -182,7 +184,7 @@ riverctl rule-add -app-id "bar" csd
 riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
 
-touchpad=$(riverctl list-inputs | rg "*Touchpad")
+touchpad=$(riverctl list-inputs | grep -i touchpad)
 riverctl input "$touchpad" pointer-accel 0.35
 riverctl input "$touchpad" scroll-factor 1.30
 riverctl input "$touchpad" click-method clickfinger
@@ -191,4 +193,4 @@ riverctl input "$touchpad" tap enabled
 riverctl input "$touchpad" tap-button-map left-right-middle
 riverctl input "$touchpad" drag disabled
 riverctl input "$touchpad" disable-while-typing enabled
-riverctl input "$touchpad" natural-scroll enabled
+riverctl input "$touchpad" natural-scroll disabled
