@@ -15,8 +15,8 @@ background-opacity = 0.75
 background-blur-radius = 0
 
 theme = "Nord"
-cursor-style = block
-cursor-style-blink = true
+cursor-style = bar
+cursor-style-blink = false
 
 mouse-hide-while-typing = true
 copy-on-select = false
@@ -32,7 +32,7 @@ keybind = alt+h=previous_tab
 keybind = alt+l=next_tab
 keybind = ctrl+t=new_tab
 
-shell-integration = detect
-shell-integration-features = cursor,sudo,title,no-cursor
+shell-integration = zsh
+shell-integration-features = sudo,title,no-cursor
 keybind = shift+enter=text:\n
 # background = #000000

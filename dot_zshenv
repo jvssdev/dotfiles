@@ -1,5 +1,5 @@
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="hx"
+export VISUAL="hx"
 export TERMINAL="ghostty"
 export BROWSER="zen-browser"
 

@@ -1,7 +1,7 @@
 # enable powerlevel10k instant prompt, keep at the top of the file
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
 if [[ ! -d "$cache_dir" ]]; then
@@ -41,6 +41,7 @@ select-word-style bash
 export ZVM_INIT_MODE=sourcing
 export PATH="/usr/lib64/qt6/bin:$PATH"
 
+alias xh='hx'
 alias ls='lsd'
 alias cat='bat --paging=never'
 #
@@ -111,21 +112,50 @@ function plugin-load {
 
 # list of github repos of plugins
 repos=(
-	#romkatv/powerlevel10k
-	jeffreytse/zsh-vi-mode
-
+	Multirious/zsh-helix-mode
 	zsh-users/zsh-autosuggestions
 	zdharma-continuum/fast-syntax-highlighting
 )
+export ZHM_STYLE_CURSOR_SELECT="fg=#2e3440,bg=#bf616a"     
+export ZHM_STYLE_CURSOR_INSERT="fg=#2e3440,bg=#a3be8c"     
+export ZHM_STYLE_OTHER_CURSOR_NORMAL="fg=#2e3440,bg=#81a1c1"  
+export ZHM_STYLE_OTHER_CURSOR_SELECT="fg=#2e3440,bg=#b48ead"  
+export ZHM_STYLE_OTHER_CURSOR_INSERT="fg=#2e3440,bg=#88c0d0"  
+export ZHM_STYLE_SELECTION="fg=#eceff4,bg=#434c5e"
+
+export ZHM_CURSOR_INSERT='\e[0m\e[6 q\e]12;#a3be8c\a'     
+# export ZHM_CURSOR_SELECT='\e[0m\e[2 q\e]12;#bf616a\a'     
+# export ZHM_CURSOR_NORMAL='\e[0m\e[2 q\e]12;#81a1c1\a'
+
 plugin-load $repos
 
-# fzf in terminal, fzf must be installed to use this
-eval "$(fzf --zsh)"
-# fzf catppuccin theme
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(
+  zhm_history_prev
+  zhm_history_next
+  zhm_prompt_accept
+  zhm_accept
+  zhm_accept_or_insert_newline
+)
+ZSH_AUTOSUGGEST_ACCEPT_WIDGETS+=(
+  zhm_move_right
+  zhm_clear_selection_move_right
+)
+ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(
+  zhm_move_next_word_start
+  zhm_move_next_word_end
+)
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(fzf --zsh)"
+
+zhm_wrap_widget fzf-completion zhm_fzf_completion
+bindkey '^I' zhm_fzf_completion
+    
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#3b4252,bg:#2e3440,spinner:#d8dee9,hl:#88c0d0 \
+--color=fg:#d8dee9,header:#88c0d0,info:#81a1c1,pointer:#d8dee9 \
+--color=marker:#a3be8c,fg+:#eceff4,prompt:#81a1c1,hl+:#8fbcbb"
+
+eval "$(zoxide init --cmd cd zsh)"
+
+#eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
