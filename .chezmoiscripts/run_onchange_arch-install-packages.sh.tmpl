@@ -1,0 +1,22 @@
+{{ if eq .chezmoi.osRelease.id "artix" -}}
+#! /bin/sh
+
+set -e
+
+packages_list=""
+{{ range .packages.arch.pacman -}}
+package={{ . | quote}}
+packages_list="$packages_list $package"
+{{ end -}}
+sudo pacman -S --noconfirm --needed $packages_list
+
+packages_list=""
+{{ range .packages.arch.aur -}}
+package={{ . | quote}}
+packages_list="$packages_list $package"
+{{ end -}}
+if command -v yay > /dev/null; then
+    yay -Syu --noconfirm --needed $packages_list 
+fi
+
+{{ end -}}
