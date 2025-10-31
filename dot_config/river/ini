@@ -15,6 +15,8 @@ dbus-update-activation-environment \
 
 #autostart
 riverctl spawn "pipewire"
+riverctl spawn "pipewire-pulse"
+riverctl spawn "wireplumber"
 riverctl spawn "hypridle -c ~/.config/hypridle/hypridle.conf"
 riverctl spawn "wpaperd"
 riverctl spawn "mpd >/dev/null 2>&1 &"
