@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.osRelease.id "artix" -}}
+{{ if eq .chezmoi.osRelease.id "arch" -}}
 #! /bin/sh
 
 set -e
@@ -18,5 +18,4 @@ packages_list="$packages_list $package"
 if command -v yay > /dev/null; then
     yay -Syu --noconfirm --needed $packages_list 
 fi
-
 {{ end -}}

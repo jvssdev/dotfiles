@@ -1,4 +1,3 @@
-{{ if not (eq .chezmoi.osRelease.id "artix") -}}
 #!/bin/bash
 set -e
 
@@ -20,4 +19,3 @@ else
     journalctl --user -u mpd.service --no-pager -n 20
     exit 1
 fi
-{{ end -}}

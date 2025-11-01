@@ -1,8 +1,8 @@
-{{- $windowmanager := "niri" -}}
+{{- $windowmanager := "river" -}}
 {{- if stat "/usr/bin/river" -}}
 {{-   $windowmanager = "river" -}}
-{{- else if stat "/usr/bin/niri" -}}
-{{-   $windowmanager = "niri" -}}
+{{- else if stat "/usr/bin/mangowc" -}}
+{{-   $windowmanager = "mangowc" -}}
 {{- end }}
 
 [data]

@@ -1,24 +1,25 @@
 # Ignore common or general files here, if necessary
 README.md
+.config/niri
 
-# Ignore Niri configs if NOT Niri
-{{- if ne .windowmanager "niri" }}
-.config/niri/
+{{- if ne .chezmoi.osRelease.id "arch" -}}
+.config/Brewfile
+{{- end }}
+
+# Ignore MangoWC configs if NOT MangoWC
+{{- if ne .windowmanager "mangowc" }}
+.config/mango/
 .config/quickshell/
 .config/DankMaterialShell/
 .local/state/DankMaterialShell/
 .config/dgop/
-.config/systemd/
-.config/Brewfile
 {{- end }}
 
 # Ignore River configs if NOT River
 {{- if ne .windowmanager "river" }}
 .config/waybar/
 .config/mako/
-.config/dinit.d/
 .config/pipewire/
-.chezmoidata/packages.yaml
 .config/wpaperd/
 .config/wleave/
 .config/gtklock/
