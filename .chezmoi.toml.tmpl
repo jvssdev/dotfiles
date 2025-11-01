@@ -1,9 +1,4 @@
-{{- $windowmanager := "river" -}}
-{{- if stat "/usr/bin/river" -}}
-{{-   $windowmanager = "river" -}}
-{{- else if stat "/usr/bin/mangowc" -}}
-{{-   $windowmanager = "mangowc" -}}
-{{- end }}
-
+{{- $choices := list "river" "mango" "niri" -}}
+{{- $windowmanager := promptChoiceOnce . "windowmanager" "Which window manager you want to install?" $choices -}}
 [data]
-    windowmanager = "{{ $windowmanager }}"
+    windowmanager = {{- $windowmanager | quote -}}

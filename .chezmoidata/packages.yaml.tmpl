@@ -1,6 +1,7 @@
 packages:
   arch:
     aur:
+      - timeshift-autosnap
       - wleave
       - zen-browser-bin
       - helium-browser-bin
@@ -10,6 +11,25 @@ packages:
       - anydesk-bin
       - lmstudio 
     pacman:
+    {{- if eq .windowmanager "river" }}
+      - river    
+      - xorg-xwayland
+      - wlroots
+      - xdg-desktop-portal-wlr
+      - xdg-desktop-portal-gtk
+    {{- end }}
+      - wget
+      - git
+      - snapper
+      - snap-pac 
+      - wayland
+      - wayland-protocols
+      - network-manager-applet
+      - vim
+      - nano
+      - polkit
+      - grub-btrfs
+      - chezmoi
       - pipewire
       - pipewire-pulse
       - pipewire-alsa

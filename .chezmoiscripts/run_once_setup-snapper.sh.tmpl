@@ -1,0 +1,152 @@
+#!/bin/bash
+# Chezmoi run_once script to setup Snapper + snap-pac
+# Save as: ~/.local/share/chezmoi/run_once_setup-snapper.sh.tmpl
+
+set -e
+
+echo "==> Setting up Snapper + snap-pac..."
+
+# Check if running on Btrfs
+if ! findmnt -n -o FSTYPE / | grep -q btrfs; then
+    echo "ERROR: Root filesystem is not Btrfs. Snapper requires Btrfs."
+    exit 1
+fi
+
+# Install packages if not already installed
+if ! pacman -Q snapper snap-pac &>/dev/null; then
+    echo "Installing snapper and snap-pac..."
+    sudo pacman -S --needed --noconfirm snapper snap-pac
+else
+    echo "Snapper and snap-pac already installed"
+fi
+
+# Create root config if it doesn't exist
+if [ ! -f /etc/snapper/configs/root ]; then
+    echo "Creating Snapper configuration for root..."
+    
+    # Unmount .snapshots if mounted
+    if mountpoint -q /.snapshots 2>/dev/null; then
+        sudo umount /.snapshots
+    fi
+    
+    # Remove existing .snapshots directory/subvolume
+    if [ -d /.snapshots ]; then
+        # Try to delete as subvolume first, then as directory
+        sudo btrfs subvolume delete /.snapshots 2>/dev/null || sudo rm -rf /.snapshots
+    fi
+    
+    # Create configuration (this creates .snapshots subvolume)
+    sudo snapper -c root create-config /
+    
+    echo "Root configuration created"
+else
+    echo "Snapper root configuration already exists"
+fi
+
+# Configure snapshot retention
+echo "Configuring snapshot retention policy..."
+sudo tee /etc/snapper/configs/root > /dev/null << 'EOF'
+# subvolume to snapshot
+SUBVOLUME="/"
+
+# filesystem type
+FSTYPE="btrfs"
+
+# btrfs qgroup for space aware cleanup algorithms
+QGROUP=""
+
+# fraction or absolute size of the filesystems space the snapshots may use
+SPACE_LIMIT="0.5"
+
+# fraction or absolute size of the filesystems space that should be free
+FREE_LIMIT="0.2"
+
+# users and groups allowed to work with config
+ALLOW_USERS=""
+ALLOW_GROUPS=""
+
+# sync users and groups from ALLOW_USERS and ALLOW_GROUPS to .snapshots
+# directory
+SYNC_ACL="no"
+
+# start comparing pre- and post-snapshot in background after creating
+# post-snapshot
+BACKGROUND_COMPARISON="yes"
+
+# run daily number cleanup
+NUMBER_CLEANUP="yes"
+
+# limit for number cleanup
+NUMBER_MIN_AGE="1800"
+NUMBER_LIMIT="10"
+NUMBER_LIMIT_IMPORTANT="10"
+
+# create hourly snapshots
+TIMELINE_CREATE="yes"
+
+# cleanup hourly snapshots after some time
+TIMELINE_CLEANUP="yes"
+
+# limits for timeline cleanup
+TIMELINE_MIN_AGE="1800"
+TIMELINE_LIMIT_HOURLY="5"
+TIMELINE_LIMIT_DAILY="7"
+TIMELINE_LIMIT_WEEKLY="0"
+TIMELINE_LIMIT_MONTHLY="0"
+TIMELINE_LIMIT_YEARLY="0"
+
+# cleanup empty pre-post-pairs
+EMPTY_PRE_POST_CLEANUP="yes"
+
+# limits for empty pre-post-pair cleanup
+EMPTY_PRE_POST_MIN_AGE="1800"
+EOF
+
+echo "Retention policy configured"
+
+# Enable and start timers
+echo "Enabling Snapper timers..."
+sudo systemctl enable --now snapper-timeline.timer
+sudo systemctl enable --now snapper-cleanup.timer
+
+# Create initial snapshot
+if [ $(sudo snapper -c root list | wc -l) -le 2 ]; then
+    echo "Creating initial snapshot..."
+    sudo snapper -c root create --description "Initial snapshot after setup"
+fi
+
+# Optional: Configure home if it's a separate subvolume
+if mountpoint -q /home && findmnt -n -o FSTYPE /home | grep -q btrfs; then
+    if [ ! -f /etc/snapper/configs/home ]; then
+        echo "Detected separate /home subvolume, creating configuration..."
+        
+        if mountpoint -q /home/.snapshots 2>/dev/null; then
+            sudo umount /home/.snapshots
+        fi
+        
+        if [ -d /home/.snapshots ]; then
+            sudo btrfs subvolume delete /home/.snapshots 2>/dev/null || sudo rm -rf /home/.snapshots
+        fi
+        
+        sudo snapper -c home create-config /home
+        
+        # Less aggressive retention for home
+        sudo sed -i 's/TIMELINE_LIMIT_HOURLY="[0-9]*"/TIMELINE_LIMIT_HOURLY="3"/' /etc/snapper/configs/home
+        sudo sed -i 's/TIMELINE_LIMIT_DAILY="[0-9]*"/TIMELINE_LIMIT_DAILY="5"/' /etc/snapper/configs/home
+        
+        sudo snapper -c home create --description "Initial home snapshot"
+        echo "Home configuration created"
+    fi
+fi
+
+echo ""
+echo "==> Snapper setup complete!"
+echo ""
+echo "Useful commands:"
+echo "  sudo snapper -c root list                    # List snapshots"
+echo "  sudo snapper -c root create -d 'description' # Manual snapshot"
+echo "  sudo snapper -c root delete X                # Delete snapshot"
+echo "  sudo snapper -c root status X..Y             # Compare snapshots"
+echo "  sudo snapper -c root undochange X..Y         # Rollback changes"
+echo ""
+echo "snap-pac will automatically create snapshots before/after pacman updates"
