@@ -86,6 +86,7 @@ e = [
   ":open %sh{cat /tmp/yazi-path}",
   ":redraw",
 ]
+o = ":lsp-workspace-command open-preview"
 
 [keys.normal.space.b]
 "d" = ":buffer-close"

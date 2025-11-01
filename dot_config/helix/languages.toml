@@ -6,7 +6,12 @@
 [[language]]
 name = "markdown"
 formatter = { command = 'prettierd', args = ["--parser", "markdown"] }
+language-servers = ["markdown-oxide", "mpls"]
 auto-format = true
+
+[language-server.mpls]
+command = "mpls"
+args = ["--dark-mode", "--enable-emoji"]
 
 [[language]]
 name = "javascript"
@@ -61,6 +66,12 @@ auto-format = true
 [[language]]
 name = "yaml"
 formatter = { command = 'prettierd', args = ["--parser", "yaml"] }
+auto-format = true
+
+[[language]]
+name = "nix"
+formatter = { command = 'nixfmt' }
+language-servers = [ "nixd" ]
 auto-format = true
 
 # [[language]]

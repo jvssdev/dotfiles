@@ -1,19 +1,16 @@
 packages:
   arch:
     aur:
-      base:
-        - timeshift-autosnap
-        - wleave
-        - zen-browser-bin
-        - helium-browser-bin
-        - nordzy-icon-theme
-        - nordic-theme
-        - bibata-cursor-theme
-        - anydesk-bin
-        - lmstudio
-        - mpls-bin
-      river:
-        - wideriver 
+      - timeshift-autosnap
+      - wleave
+      - zen-browser-bin
+      - helium-browser-bin
+      - nordzy-icon-theme
+      - nordic-theme
+      - bibata-cursor-theme
+      - anydesk-bin
+      - lmstudio
+      - mpls-bin
     pacman:
       base:
         - wget

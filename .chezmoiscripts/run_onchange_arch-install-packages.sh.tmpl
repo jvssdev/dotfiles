@@ -1,21 +1,53 @@
 {{ if eq .chezmoi.osRelease.id "arch" -}}
-#! /bin/sh
-
+#!/bin/bash
 set -e
 
-packages_list=""
-{{ range .packages.arch.pacman -}}
-package={{ . | quote}}
-packages_list="$packages_list $package"
-{{ end -}}
-sudo pacman -S --noconfirm --needed $packages_list
+echo "Installing Arch Linux packages..."
 
+# Install base pacman packages
 packages_list=""
-{{ range .packages.arch.aur -}}
-package={{ . | quote}}
+{{ range .packages.arch.pacman.base -}}
+package={{ . | quote }}
 packages_list="$packages_list $package"
 {{ end -}}
-if command -v yay > /dev/null; then
-    yay -Syu --noconfirm --needed $packages_list 
+
+{{- if eq .windowmanager "river" }}
+echo "Adding River window manager packages..."
+{{ range .packages.arch.pacman.river -}}
+package={{ . | quote }}
+packages_list="$packages_list $package"
+{{ end -}}
+{{- end }}
+
+if [ -n "$packages_list" ]; then
+    echo "Installing pacman packages..."
+    sudo pacman -S --noconfirm --needed $packages_list
 fi
+
+# Install base AUR packages
+packages_list=""
+{{ range .packages.arch.aur.base -}}
+package={{ . | quote }}
+packages_list="$packages_list $package"
+{{ end -}}
+
+{{- if eq .windowmanager "river" }}
+echo "Adding River AUR packages..."
+{{ range .packages.arch.aur.river -}}
+package={{ . | quote }}
+packages_list="$packages_list $package"
+{{ end -}}
+{{- end }}
+
+if [ -n "$packages_list" ]; then
+    if command -v yay > /dev/null; then
+        echo "Installing AUR packages with yay..."
+        yay -S --noconfirm --needed $packages_list
+    else
+        echo "Warning: yay is not installed. Skipping AUR packages."
+        echo "Install yay to install: $packages_list"
+    fi
+fi
+
+echo "Package installation completed!"
 {{ end -}}

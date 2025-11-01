@@ -40,6 +40,10 @@ select-word-style bash
 # fix vi plugin conflicting with fzf
 export ZVM_INIT_MODE=sourcing
 export PATH="/usr/lib64/qt6/bin:$PATH"
+	
+export PATH="$HOME/.cargo/bin:$PATH"
+export GOPATH=$HOME/go
+export PATH="/home/joaov/.local/bin:$PATH"
 
 alias xh='hx'
 alias ls='lsd'
