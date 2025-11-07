@@ -1,123 +1,106 @@
 packages:
-  arch:
-    aur:
-      base:
-        - timeshift-autosnap
-        - wleave
-        - zen-browser-bin
-        - helium-browser-bin
-        - nordzy-icon-theme
-        - nordic-theme
-        - bibata-cursor-theme
-        - anydesk-bin
-        - lmstudio
-        - mpls-bin
-      river:
-        - wideriver 
-    pacman:
+  opensuse: 
+    zypper:
       base:
         - wget
-        - git
-        - snapper
-        - snap-pac
+        - git        
         - wayland
         - wayland-protocols
         - network-manager-applet
         - vim
         - nano
         - polkit
-        - grub-btrfs
         - chezmoi
         - pipewire
-        - pipewire-pulse
+        - pipewire-pulseaudio
         - pipewire-alsa
         - pipewire-jack
-        - pipewire-dinit
-        - pipewire-pulse-dinit
-        - wireplumber-dinit
         - wireplumber
         - pavucontrol
-        - gtklock
-        - hypridle
         - bluez
         - blueman
-        - wpaperd
-        - ghostty
+        - ghostty  
+        - zsh
+        - starship
+        - helix
+        - zed  
+        - prettierd
+        - biome
+        - go
+        - gopls
+        - golangci-lint
+        - python311-uv
+        - zig
         - yazi
-        - qemu-desktop
+        - thunar
+        - thunar-plugin-archive
+        - thunar-volman
+        - xarchiver
+        - gvfs
+        - gvfs-backends
+        - android-tools
+        - mediainfo
+        - qemu
         - libvirt
         - virt-manager
         - virt-viewer
-        - edk2-ovmf
-        - spice
-        - spice-gtk
-        - spice-protocol
-        - qbittorrent
-        - prettierd
-        - biome
-        - gopls
-        - golangci-lint
+        - qemu-ovmf-x86_64
         - p7zip
+        - unrar
         - wl-clipboard
         - cliphist
         - wf-recorder
+        - grim
+        - slurp
         - brightnessctl
         - gammastep
-        - grim
         - fuzzel
-        - slurp
-        - bat
-        - zed
         - btop
         - docker
-        - ttf-jetbrains-mono-nerd
-        - ttf-jetbrains-mono
-        - ttf-nerd-fonts-symbols
+        - docker-compose
+        - jetbrains-mono-fonts
+        - nerd-fonts  
         - fastfetch
         - keepassxc
         - rclone
         - zathura
-        - zathura-pdf-poppler
+        - zathura-plugin-pdf-poppler
         - imv
         - mpd
         - mpc
-        - rmpc
         - mpv
-        - mako
-        - zsh
-        - syncthing
-        - thunar
-        - thunar-archive-plugin
-        - thunar-volman
-        - xarchiver
-        - gvfs-mtp
-        - gvfs-gphoto2
-        - gvfs-smb
-        - gvfs-nfs
-        - android-tools
-        - mediainfo
-        - mpd-mpris
         - playerctl
+        - mako
+        - syncthing
         - alsa-firmware
-        - docker-compose
-        - docker-buildx
         - duf
+        - bat
+        - fd
+        - fzf
+        - lazygit
+        - ripgrep
+        - zoxide
         - qt5ct
         - qt6ct
         - qt5-wayland
         - qt6-wayland
-        - fd
-        - fzf
-        - lazygit
-        - helix
-        - ripgrep
-        - starship
-        - uv
-        - zoxide
-        - zig
       river:
-        - river
-        - xorg-xwayland
+        - river  
+        - xwayland
         - wlroots
         - xdg-desktop-portal-wlr
         - xdg-desktop-portal-gtk
+    obs:
+      base:
+        - zen-browser  
+        - helium-browser  
+        # - nordzy-icon-theme  
+        # - nordic-theme  
+        - bibata-cursor-theme  
+        # - anydesk  
+        - timeshift  
+        # - wleave  
+        - rmpc  
+      #   - lmstudio          
+      # river:
+      #   - wideriver  

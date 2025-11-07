@@ -1,0 +1,2457 @@
+# Project Directory Structure:
+.
+├── .chezmoidata/
+│   └── packages.yaml
+├── .chezmoiscripts/
+│   ├── run_once_after_setup-snapper.sh.tmpl
+│   ├── run_once_before_install-yay.sh.tmpl
+│   ├── run_onchange_after_mpd-enable.sh
+│   ├── run_onchange_after_yazi-plugins.sh
+│   └── run_onchange_arch-install-packages.sh.tmpl
+├── Wallpapers/
+│   ├── 250a80a4-492a-46de-b54b-13e47f93ab66.png
+│   ├── Firewatch.png
+│   ├── Nord_3840x2160.png
+│   ├── Picture 16.png
+│   ├── a6116535-4a72-453e-83c9-ea97b8597d8c.png
+│   ├── lit-up-sky-colorized.png
+│   ├── lit-up-sky.png
+│   ├── mountainstars.png
+│   ├── nighttimesky-colorized.png
+│   ├── nighttimesky.jpg
+│   ├── nord_valley.png
+│   ├── paul-pastourmatzis-KT3WlrL_bsg-unsplash.jpg
+│   ├── puffy-stars-colorized.png
+│   ├── puffy-stars.jpg
+│   ├── sky-stars.png
+│   ├── tokyonight.jpg
+│   ├── tokyonight.png
+│   └── wallhaven-9mjw78.png
+├── dot_config/
+│   ├── DankMaterialShell/
+│   │   ├── firefox.css
+│   │   └── settings.json.tmpl
+│   ├── btop/
+│   │   ├── themes/
+│   │   │   └── .keep
+│   │   └── btop.conf
+│   ├── dgop/
+│   │   └── colors.json
+│   ├── fastfetch/
+│   │   └── config.jsonc
+│   ├── fuzzel/
+│   │   └── fuzzel.ini
+│   ├── ghostty/
+│   │   └── config
+│   ├── gtk-3.0/
+│   │   └── settings.ini
+│   ├── gtk-4.0/
+│   │   └── settings.ini
+│   ├── gtklock/
+│   │   ├── config.ini
+│   │   └── style.css.tmpl
+│   ├── helix/
+│   │   ├── themes/
+│   │   │   └── nord_transparent.toml
+│   │   ├── config.toml
+│   │   └── languages.toml
+│   ├── hypridle/
+│   │   └── hypridle.conf
+│   ├── mako/
+│   │   └── config
+│   ├── mpd/
+│   │   ├── empty_database
+│   │   ├── empty_log
+│   │   ├── empty_pid
+│   │   ├── empty_state
+│   │   ├── empty_sticker.sql
+│   │   ├── mpd.conf
+│   │   ├── mpd.db
+│   │   └── mpd.state
+│   ├── niri/
+│   │   ├── config.kdl
+│   │   └── dankshell-colors.kdl
+│   ├── pipewire/
+│   │   └── pipewire.conf.d/
+│   │       ├── user-session.conf
+│   │       └── user-session.conf
+
+
+│   ├── qt5ct/
+│   │   └── qt5ct.conf
+│   ├── qt6ct/
+│   │   └── qt6ct.conf
+│   ├── quickshell/
+│   │   └── dms/
+│   │       ├── Common/
+│   │       │   ├── Anims.qml
+│   │       │   ├── AppUsageHistoryData.qml
+│   │       │   ├── Appearance.qml
+│   │       │   ├── CacheUtils.qml
+│   │       │   ├── ModalManager.qml
+│   │       │   ├── Paths.qml
+│   │       │   ├── Ref.qml
+│   │       │   ├── SessionData.qml
+│   │       │   ├── SettingsData.qml
+│   │       │   ├── StockThemes.js
+│   │       │   ├── Theme.qml
+│   │       │   ├── fzf.js
+│   │       │   └── markdown2html.js
+│   │       ├── Modals/
+│   │       │   ├── Clipboard/
+│   │       │   │   ├── ClipboardConstants.qml
+│   │       │   │   ├── ClipboardContent.qml
+│   │       │   │   ├── ClipboardEntry.qml
+│   │       │   │   ├── ClipboardHeader.qml
+│   │       │   │   ├── ClipboardHistoryModal.qml
+│   │       │   │   ├── ClipboardKeyboardController.qml
+│   │       │   │   ├── ClipboardKeyboardHints.qml
+│   │       │   │   ├── ClipboardProcesses.qml
+│   │       │   │   └── ClipboardThumbnail.qml
+│   │       │   ├── Common/
+│   │       │   │   ├── ConfirmModal.qml
+│   │       │   │   └── DankModal.qml
+│   │       │   ├── FileBrowser/
+│   │       │   │   ├── FileBrowserModal.qml
+│   │       │   │   ├── FileInfo.qml
+│   │       │   │   └── KeyboardHints.qml
+│   │       │   ├── Settings/
+│   │       │   │   ├── PowerSettings.qml
+│   │       │   │   ├── ProfileSection.qml
+│   │       │   │   ├── SettingsContent.qml
+│   │       │   │   ├── SettingsModal.qml
+│   │       │   │   └── SettingsSidebar.qml
+│   │       │   ├── Spotlight/
+│   │       │   │   ├── SpotlightContent.qml
+│   │       │   │   ├── SpotlightContextMenu.qml
+│   │       │   │   ├── SpotlightModal.qml
+│   │       │   │   └── SpotlightResults.qml
+│   │       │   ├── ColorPickerModal.qml
+│   │       │   ├── NetworkInfoModal.qml
+│   │       │   ├── NotificationModal.qml
+│   │       │   ├── PowerMenuModal.qml
+│   │       │   ├── ProcessListModal.qml
+│   │       │   └── WifiPasswordModal.qml
+│   │       ├── Modules/
+│   │       │   ├── AppDrawer/
+│   │       │   │   ├── AppDrawerPopout.qml
+│   │       │   │   ├── AppLauncher.qml
+│   │       │   │   └── CategorySelector.qml
+│   │       │   ├── ControlCenter/
+│   │       │   │   ├── Components/
+│   │       │   │   │   ├── ActionTile.qml
+│   │       │   │   │   ├── DetailHost.qml
+│   │       │   │   │   ├── DragDropDetailHost.qml
+│   │       │   │   │   ├── DragDropGrid.qml
+│   │       │   │   │   ├── DragDropWidgetWrapper.qml
+│   │       │   │   │   ├── EditControls.qml
+│   │       │   │   │   ├── HeaderPane.qml
+│   │       │   │   │   ├── PowerButton.qml
+│   │       │   │   │   ├── PowerOptionsPane.qml
+│   │       │   │   │   ├── SizeControls.qml
+│   │       │   │   │   └── Typography.qml
+│   │       │   │   ├── Details/
+│   │       │   │   │   ├── AudioInputDetail.qml
+│   │       │   │   │   ├── AudioOutputDetail.qml
+│   │       │   │   │   ├── BatteryDetail.qml
+│   │       │   │   │   ├── BluetoothCodecSelector.qml
+│   │       │   │   │   ├── BluetoothDetail.qml
+│   │       │   │   │   ├── DiskUsageDetail.qml
+│   │       │   │   │   └── NetworkDetail.qml
+│   │       │   │   ├── Models/
+│   │       │   │   │   └── WidgetModel.qml
+│   │       │   │   ├── Widgets/
+│   │       │   │   │   ├── AudioInputPill.qml
+│   │       │   │   │   ├── AudioOutputPill.qml
+│   │       │   │   │   ├── AudioSliderRow.qml
+│   │       │   │   │   ├── BatteryPill.qml
+│   │       │   │   │   ├── BluetoothPill.qml
+│   │       │   │   │   ├── BrightnessSliderRow.qml
+│   │       │   │   │   ├── CompactSlider.qml
+│   │       │   │   │   ├── CompoundPill.qml
+│   │       │   │   │   ├── DetailView.qml
+│   │       │   │   │   ├── DiskUsagePill.qml
+│   │       │   │   │   ├── InputAudioSliderRow.qml
+│   │       │   │   │   ├── NetworkPill.qml
+│   │       │   │   │   ├── SmallBatteryButton.qml
+│   │       │   │   │   ├── SmallToggleButton.qml
+│   │       │   │   │   └── ToggleButton.qml
+│   │       │   │   ├── utils/
+│   │       │   │   │   ├── layout.js
+│   │       │   │   │   ├── state.js
+│   │       │   │   │   └── widgets.js
+│   │       │   │   ├── ControlCenterPopout.qml
+│   │       │   │   └── PowerMenu.qml
+│   │       │   ├── DankBar/
+│   │       │   │   ├── AudioVisualization.qml
+│   │       │   │   ├── Battery.qml
+│   │       │   │   ├── BatteryPopout.qml
+│   │       │   │   ├── Clock.qml
+│   │       │   │   ├── ColorPicker.qml
+│   │       │   │   ├── ControlCenterButton.qml
+│   │       │   │   ├── CpuMonitor.qml
+│   │       │   │   ├── CpuTemperature.qml
+│   │       │   │   ├── DankBar.qml
+│   │       │   │   ├── DiskUsage.qml
+│   │       │   │   ├── FocusedApp.qml
+│   │       │   │   ├── GpuTemperature.qml
+│   │       │   │   ├── IdleInhibitor.qml
+│   │       │   │   ├── KeyboardLayoutName.qml
+│   │       │   │   ├── LauncherButton.qml
+│   │       │   │   ├── Media.qml
+│   │       │   │   ├── NetworkMonitor.qml
+│   │       │   │   ├── NotepadButton.qml
+│   │       │   │   ├── NotificationCenterButton.qml
+│   │       │   │   ├── PrivacyIndicator.qml
+│   │       │   │   ├── RamMonitor.qml
+│   │       │   │   ├── RunningApps.qml
+│   │       │   │   ├── RunningAppsTooltip.qml
+│   │       │   │   ├── SystemTrayBar.qml
+│   │       │   │   ├── SystemUpdate.qml
+│   │       │   │   ├── Vpn.qml
+│   │       │   │   ├── VpnPopout.qml
+│   │       │   │   ├── Weather.qml
+│   │       │   │   └── WorkspaceSwitcher.qml
+│   │       │   ├── DankDash/
+│   │       │   │   ├── Overview/
+│   │       │   │   │   ├── CalendarOverviewCard.qml
+│   │       │   │   │   ├── Card.qml
+│   │       │   │   │   ├── ClockCard.qml
+│   │       │   │   │   ├── MediaOverviewCard.qml
+│   │       │   │   │   ├── SystemMonitorCard.qml
+│   │       │   │   │   ├── UserInfoCard.qml
+│   │       │   │   │   └── WeatherOverviewCard.qml
+│   │       │   │   ├── DankDashPopout.qml
+│   │       │   │   ├── MediaPlayerTab.qml
+│   │       │   │   ├── OverviewTab.qml
+│   │       │   │   └── WeatherTab.qml
+│   │       │   ├── Dock/
+│   │       │   │   ├── Dock.qml
+│   │       │   │   ├── DockAppButton.qml
+│   │       │   │   ├── DockApps.qml
+│   │       │   │   └── DockContextMenu.qml
+│   │       │   ├── Lock/
+│   │       │   │   ├── CustomButtonKeyboard.qml
+│   │       │   │   ├── Keyboard.qml
+│   │       │   │   ├── KeyboardController.qml
+│   │       │   │   ├── Lock.qml
+│   │       │   │   ├── LockScreenContent.qml
+│   │       │   │   ├── LockScreenDemo.qml
+│   │       │   │   └── LockSurface.qml
+│   │       │   ├── Notepad/
+│   │       │   │   ├── Notepad.qml
+│   │       │   │   ├── NotepadSettings.qml
+│   │       │   │   ├── NotepadTabs.qml
+│   │       │   │   └── NotepadTextEditor.qml
+│   │       │   ├── Notifications/
+│   │       │   │   ├── Center/
+│   │       │   │   │   ├── KeyboardNavigatedNotificationList.qml
+│   │       │   │   │   ├── NotificationCard.qml
+│   │       │   │   │   ├── NotificationCenterPopout.qml
+│   │       │   │   │   ├── NotificationEmptyState.qml
+│   │       │   │   │   ├── NotificationHeader.qml
+│   │       │   │   │   ├── NotificationKeyboardController.qml
+│   │       │   │   │   ├── NotificationKeyboardHints.qml
+│   │       │   │   │   └── NotificationSettings.qml
+│   │       │   │   └── Popup/
+│   │       │   │       ├── NotificationPopup.qml
+│   │       │   │       └── NotificationPopupManager.qml
+│   │       │   ├── OSD/
+│   │       │   │   ├── BrightnessOSD.qml
+│   │       │   │   ├── IdleInhibitorOSD.qml
+│   │       │   │   ├── MicMuteOSD.qml
+│   │       │   │   └── VolumeOSD.qml
+│   │       │   ├── ProcessList/
+│   │       │   │   ├── PerformanceTab.qml
+│   │       │   │   ├── ProcessContextMenu.qml
+│   │       │   │   ├── ProcessListItem.qml
+│   │       │   │   ├── ProcessListPopout.qml
+│   │       │   │   ├── ProcessListView.qml
+│   │       │   │   ├── ProcessesTab.qml
+│   │       │   │   ├── SystemOverview.qml
+│   │       │   │   └── SystemTab.qml
+│   │       │   ├── Settings/
+│   │       │   │   ├── AboutTab.qml
+│   │       │   │   ├── DankBarTab.qml
+│   │       │   │   ├── DisplaysTab.qml
+│   │       │   │   ├── DockTab.qml
+│   │       │   │   ├── LauncherTab.qml
+│   │       │   │   ├── PersonalizationTab.qml
+│   │       │   │   ├── SettingsSection.qml
+│   │       │   │   ├── ThemeColorsTab.qml
+│   │       │   │   ├── TimeTab.qml
+│   │       │   │   ├── WeatherTab.qml
+│   │       │   │   ├── WidgetSelectionPopup.qml
+│   │       │   │   ├── WidgetTweaksTab.qml
+│   │       │   │   └── WidgetsTabSection.qml
+│   │       │   ├── SystemUpdatePopout.qml
+│   │       │   ├── Toast.qml
+│   │       │   ├── WallpaperBackground.qml
+│   │       │   └── WallpaperEngineProc.qml
+│   │       ├── Services/
+│   │       │   ├── AppSearchService.qml
+│   │       │   ├── AudioService.qml
+│   │       │   ├── BatteryService.qml
+│   │       │   ├── BluetoothService.qml
+│   │       │   ├── CalendarService.qml
+│   │       │   ├── CavaService.qml
+│   │       │   ├── CompositorService.qml
+│   │       │   ├── DgopService.qml
+│   │       │   ├── DisplayService.qml
+│   │       │   ├── IdleService.qml
+│   │       │   ├── MprisController.qml
+│   │       │   ├── NetworkService.qml
+│   │       │   ├── NiriService.qml
+│   │       │   ├── NotepadStorageService.qml
+│   │       │   ├── NotificationService.qml
+│   │       │   ├── PortalService.qml
+│   │       │   ├── PrivacyService.qml
+│   │       │   ├── SessionService.qml
+│   │       │   ├── SystemUpdateService.qml
+│   │       │   ├── ToastService.qml
+│   │       │   ├── UserInfoService.qml
+│   │       │   ├── VpnService.qml
+│   │       │   ├── WallpaperCyclingService.qml
+│   │       │   └── WeatherService.qml
+│   │       ├── Shaders/
+│   │       │   ├── frag/
+│   │       │   │   ├── wp_disc.frag
+│   │       │   │   ├── wp_fade.frag
+│   │       │   │   ├── wp_iris_bloom.frag
+│   │       │   │   ├── wp_pixelate.frag
+│   │       │   │   ├── wp_portal.frag
+│   │       │   │   ├── wp_stripes.frag
+│   │       │   │   └── wp_wipe.frag
+│   │       │   └── qsb/
+│   │       │       ├── wp_disc.frag.qsb
+│   │       │       ├── wp_fade.frag.qsb
+│   │       │       ├── wp_iris_bloom.frag.qsb
+│   │       │       ├── wp_pixelate.frag.qsb
+│   │       │       ├── wp_portal.frag.qsb
+│   │       │       ├── wp_stripes.frag.qsb
+│   │       │       └── wp_wipe.frag.qsb
+│   │       ├── Widgets/
+│   │       │   ├── CachingImage.qml
+│   │       │   ├── DankActionButton.qml
+│   │       │   ├── DankAlbumArt.qml
+│   │       │   ├── DankBackdrop.qml
+│   │       │   ├── DankButtonGroup.qml
+│   │       │   ├── DankCircularImage.qml
+│   │       │   ├── DankColorPicker.qml
+│   │       │   ├── DankDropdown.qml
+│   │       │   ├── DankFlickable.qml
+│   │       │   ├── DankGridView.qml
+│   │       │   ├── DankIcon.qml
+│   │       │   ├── DankIconPicker.qml
+│   │       │   ├── DankListView.qml
+│   │       │   ├── DankLocationSearch.qml
+│   │       │   ├── DankOSD.qml
+│   │       │   ├── DankPopout.qml
+│   │       │   ├── DankScrollbar.qml
+│   │       │   ├── DankSeekbar.qml
+│   │       │   ├── DankSlideout.qml
+│   │       │   ├── DankSlider.qml
+│   │       │   ├── DankTabBar.qml
+│   │       │   ├── DankTextField.qml
+│   │       │   ├── DankToggle.qml
+│   │       │   ├── M3WaveProgress.qml
+│   │       │   ├── StateLayer.qml
+│   │       │   ├── StyledRect.qml
+│   │       │   ├── StyledText.qml
+│   │       │   ├── StyledTextMetrics.qml
+│   │       │   └── SystemLogo.qml
+│   │       ├── assets/
+│   │       │   ├── dank.svg
+│   │       │   ├── discord.svg
+│   │       │   ├── hyprland.svg
+│   │       │   ├── matrix-logo-white.svg
+│   │       │   ├── niri.svg
+│   │       │   └── reddit.svg
+│   │       ├── docs/
+│   │       │   ├── CUSTOM_THEMES.md
+│   │       │   ├── IPC.md
+│   │       │   ├── theme_bluewalk.json
+│   │       │   ├── theme_cyberpunk_electric.json
+│   │       │   ├── theme_hotline_miami.json
+│   │       │   ├── theme_miami_vice.json
+│   │       │   └── theme_synthwave_electric.json
+│   │       ├── dot_git/
+│   │       │   ├── hooks/
+│   │       │   │   ├── executable_applypatch-msg.sample
+│   │       │   │   ├── executable_commit-msg.sample
+│   │       │   │   ├── executable_fsmonitor-watchman.sample
+│   │       │   │   ├── executable_post-update.sample
+│   │       │   │   ├── executable_pre-applypatch.sample
+│   │       │   │   ├── executable_pre-commit.sample
+│   │       │   │   ├── executable_pre-merge-commit.sample
+│   │       │   │   ├── executable_pre-push.sample
+│   │       │   │   ├── executable_pre-rebase.sample
+│   │       │   │   ├── executable_pre-receive.sample
+│   │       │   │   ├── executable_prepare-commit-msg.sample
+│   │       │   │   ├── executable_push-to-checkout.sample
+│   │       │   │   ├── executable_sendemail-validate.sample
+│   │       │   │   └── executable_update.sample
+│   │       │   ├── info/
+│   │       │   │   └── exclude
+│   │       │   ├── logs/
+│   │       │   │   ├── refs/
+│   │       │   │   │   ├── heads/
+│   │       │   │   │   │   └── master
+│   │       │   │   │   └── remotes/
+│   │       │   │   │       └── origin/
+│   │       │   │   │           └── HEAD
+│   │       │   │   └── HEAD
+│   │       │   ├── objects/
+│   │       │   │   ├── info/
+│   │       │   │   │   └── .keep
+│   │       │   │   └── pack/
+│   │       │   │       ├── readonly_pack-7d00750ea82b4eec61d1ddd87a48e15878a6dbac.idx
+│   │       │   │       ├── readonly_pack-7d00750ea82b4eec61d1ddd87a48e15878a6dbac.pack
+│   │       │   │       └── readonly_pack-7d00750ea82b4eec61d1ddd87a48e15878a6dbac.rev
+│   │       │   ├── refs/
+│   │       │   │   ├── heads/
+│   │       │   │   │   └── master
+│   │       │   │   ├── remotes/
+│   │       │   │   │   └── origin/
+│   │       │   │   │       └── HEAD
+│   │       │   │   └── tags/
+│   │       │   │       └── .keep
+│   │       │   ├── HEAD
+│   │       │   ├── config
+│   │       │   ├── description
+│   │       │   ├── index
+│   │       │   └── packed-refs
+│   │       ├── dot_github/
+│   │       │   ├── ISSUE_TEMPLATE/
+│   │       │   │   ├── bug_report.md
+│   │       │   │   ├── feature_request.md
+│   │       │   │   └── support_request.md
+│   │       │   └── workflows/
+│   │       │       └── release.yml
+│   │       ├── matugen/
+│   │       │   ├── configs/
+│   │       │   │   ├── base.toml
+│   │       │   │   ├── dank.toml
+│   │       │   │   ├── dgop.toml
+│   │       │   │   ├── firefox.toml
+│   │       │   │   ├── niri.toml
+│   │       │   │   ├── pywalfox.toml
+│   │       │   │   ├── qt5ct.toml
+│   │       │   │   └── qt6ct.toml
+│   │       │   ├── templates/
+│   │       │   │   ├── dank.json
+│   │       │   │   ├── dgop.json
+│   │       │   │   ├── firefox-userchrome.css
+│   │       │   │   ├── gtk-colors.css
+│   │       │   │   ├── gtk3-colors.css
+│   │       │   │   ├── kitty.conf
+│   │       │   │   ├── matugen-kcolorscheme.colors
+│   │       │   │   ├── niri-colors.kdl
+│   │       │   │   ├── pywalfox-colors.json
+│   │       │   │   └── qtct-colors.conf
+│   │       │   └── executable_dank16.py
+│   │       ├── nix/
+│   │       │   ├── default.nix
+│   │       │   └── niri.nix
+│   │       ├── scripts/
+│   │       │   ├── executable_gtk.sh
+│   │       │   ├── executable_matugen-worker.sh
+│   │       │   └── executable_qt.sh
+│   │       ├── CLAUDE.md
+│   │       ├── CONTRIBUTING.md
+│   │       ├── LICENSE
+│   │       ├── README.md
+│   │       ├── alejandra.toml
+│   │       ├── dot_gitignore
+│   │       ├── executable_qmlformat-all.sh
+│   │       ├── executable_spam-notifications.sh
+│   │       ├── executable_verify-notifications.sh
+│   │       ├── flake.lock
+│   │       ├── flake.nix
+│   │       ├── matugen-config.toml
+│   │       └── shell.qml
+│   ├── river/
+│   │   └── ini
+│   ├── rmpc/
+│   │   └── config.ron
+│   ├── systemd/
+│   │   └── user/
+│   │       └── mpd.service
+│   ├── waybar/
+│   │   ├── config.jsonc
+│   │   └── style.css
+│   ├── wleave/
+│   │   ├── icons/
+│   │   │   ├── hibernate.png
+│   │   │   ├── lock.png
+│   │   │   ├── logout.png
+│   │   │   ├── reboot.png
+│   │   │   ├── shutdown.png
+│   │   │   └── suspend.png
+│   │   ├── layout
+│   │   └── style.css
+│   ├── wpaperd/
+│   │   └── config.toml.tmpl
+│   ├── xdg-desktop-portal/
+│   │   └── river-portals.conf
+│   ├── yazi/
+│   │   ├── flavors/
+│   │   │   └── nord.yazi/
+│   │   │       ├── readonly_LICENSE
+│   │   │       ├── readonly_LICENSE-tmtheme
+│   │   │       ├── readonly_README.md
+│   │   │       ├── readonly_flavor.toml
+│   │   │       ├── readonly_preview.png
+│   │   │       └── readonly_tmtheme.xml
+│   │   ├── plugins/
+│   │   │   └── starship.yazi/
+│   │   │       ├── readonly_LICENSE
+│   │   │       ├── readonly_README.md
+│   │   │       └── readonly_main.lua
+│   │   ├── init.lua
+│   │   ├── package.toml
+│   │   ├── theme.toml
+│   │   └── yazi.toml
+│   ├── zathura/
+│   │   └── zathurarc
+│   ├── zed/
+│   │   ├── themes/
+│   │   │   └── .keep
+│   │   ├── keymap.json
+│   │   └── private_settings.json
+│   ├── zsh/
+│   │   ├── plugins/
+│   │   │   ├── fast-syntax-highlighting/
+│   │   │   │   ├── dot_git/
+│   │   │   │   │   ├── hooks/
+│   │   │   │   │   │   ├── executable_applypatch-msg.sample
+│   │   │   │   │   │   ├── executable_commit-msg.sample
+│   │   │   │   │   │   ├── executable_fsmonitor-watchman.sample
+│   │   │   │   │   │   ├── executable_post-update.sample
+│   │   │   │   │   │   ├── executable_pre-applypatch.sample
+│   │   │   │   │   │   ├── executable_pre-commit.sample
+│   │   │   │   │   │   ├── executable_pre-merge-commit.sample
+│   │   │   │   │   │   ├── executable_pre-push.sample
+│   │   │   │   │   │   ├── executable_pre-rebase.sample
+│   │   │   │   │   │   ├── executable_pre-receive.sample
+│   │   │   │   │   │   ├── executable_prepare-commit-msg.sample
+│   │   │   │   │   │   ├── executable_push-to-checkout.sample
+│   │   │   │   │   │   ├── executable_sendemail-validate.sample
+│   │   │   │   │   │   └── executable_update.sample
+│   │   │   │   │   ├── info/
+│   │   │   │   │   │   └── exclude
+│   │   │   │   │   ├── logs/
+│   │   │   │   │   │   ├── refs/
+│   │   │   │   │   │   │   ├── heads/
+│   │   │   │   │   │   │   │   └── master
+│   │   │   │   │   │   │   └── remotes/
+│   │   │   │   │   │   │       └── origin/
+│   │   │   │   │   │   │           └── HEAD
+│   │   │   │   │   │   └── HEAD
+│   │   │   │   │   ├── objects/
+│   │   │   │   │   │   ├── info/
+│   │   │   │   │   │   │   └── .keep
+│   │   │   │   │   │   └── pack/
+│   │   │   │   │   │       ├── readonly_pack-fe9ecdf41c1e00c7c30e0314d696f5708f866110.idx
+│   │   │   │   │   │       ├── readonly_pack-fe9ecdf41c1e00c7c30e0314d696f5708f866110.pack
+│   │   │   │   │   │       └── readonly_pack-fe9ecdf41c1e00c7c30e0314d696f5708f866110.rev
+│   │   │   │   │   ├── refs/
+│   │   │   │   │   │   ├── heads/
+│   │   │   │   │   │   │   └── master
+│   │   │   │   │   │   ├── remotes/
+│   │   │   │   │   │   │   └── origin/
+│   │   │   │   │   │   │       └── HEAD
+│   │   │   │   │   │   └── tags/
+│   │   │   │   │   │       └── .keep
+│   │   │   │   │   ├── HEAD
+│   │   │   │   │   ├── config
+│   │   │   │   │   ├── description
+│   │   │   │   │   ├── index
+│   │   │   │   │   ├── packed-refs
+│   │   │   │   │   └── shallow
+│   │   │   │   ├── dot_github/
+│   │   │   │   │   └── workflows/
+│   │   │   │   │       ├── linting.yml
+│   │   │   │   │       └── zunit.yaml
+│   │   │   │   ├── images/
+│   │   │   │   │   ├── 203654.gif
+│   │   │   │   │   ├── array-assign.png
+│   │   │   │   │   ├── assign.png
+│   │   │   │   │   ├── brackets.gif
+│   │   │   │   │   ├── cmdsubst.png
+│   │   │   │   │   ├── cplx_cond.png
+│   │   │   │   │   ├── eval_cmp.png
+│   │   │   │   │   ├── execfd.png
+│   │   │   │   │   ├── execfd_cmp.png
+│   │   │   │   │   ├── for-loop-cmp.png
+│   │   │   │   │   ├── for-loop.png
+│   │   │   │   │   ├── function.png
+│   │   │   │   │   ├── git_chroma.png
+│   │   │   │   │   ├── global-alias.png
+│   │   │   │   │   ├── heredoc.png
+│   │   │   │   │   ├── herestring.png
+│   │   │   │   │   ├── highlight-less.png
+│   │   │   │   │   ├── highlight-much.png
+│   │   │   │   │   ├── ideal-string.png
+│   │   │   │   │   ├── in_string.png
+│   │   │   │   │   ├── math.gif
+│   │   │   │   │   ├── parameter.png
+│   │   │   │   │   ├── theme.png
+│   │   │   │   │   ├── typeset.png
+│   │   │   │   │   └── zcalc.png
+│   │   │   │   ├── share/
+│   │   │   │   │   └── free_theme.zsh
+│   │   │   │   ├── test/
+│   │   │   │   │   ├── executable_parse.zsh
+│   │   │   │   │   └── to-parse.zsh
+│   │   │   │   ├── tests/
+│   │   │   │   │   ├── _output/
+│   │   │   │   │   │   └── empty_dot_gitkeep
+│   │   │   │   │   ├── _support/
+│   │   │   │   │   │   ├── bootstrap
+│   │   │   │   │   │   └── empty_dot_gitkeep
+│   │   │   │   │   ├── example.zunit
+│   │   │   │   │   └── main.zunit
+│   │   │   │   ├── themes/
+│   │   │   │   │   ├── base16.ini
+│   │   │   │   │   ├── clean.ini
+│   │   │   │   │   ├── default.ini
+│   │   │   │   │   ├── forest.ini
+│   │   │   │   │   ├── free.ini
+│   │   │   │   │   ├── q-jmnemonic.ini
+│   │   │   │   │   ├── safari.ini
+│   │   │   │   │   ├── spa.ini
+│   │   │   │   │   ├── sv-orple.ini
+│   │   │   │   │   ├── sv-plant.ini
+│   │   │   │   │   └── zdharma.ini
+│   │   │   │   ├── →chroma/
+│   │   │   │   │   ├── -alias.ch
+│   │   │   │   │   ├── -autoload.ch
+│   │   │   │   │   ├── -autorandr.ch
+│   │   │   │   │   ├── -awk.ch
+│   │   │   │   │   ├── -docker.ch
+│   │   │   │   │   ├── -example.ch
+│   │   │   │   │   ├── -fast-theme.ch
+│   │   │   │   │   ├── -fpath_peq.ch
+│   │   │   │   │   ├── -git.ch
+│   │   │   │   │   ├── -grep.ch
+│   │   │   │   │   ├── -hub.ch
+│   │   │   │   │   ├── -ionice.ch
+│   │   │   │   │   ├── -lab.ch
+│   │   │   │   │   ├── -make.ch
+│   │   │   │   │   ├── -nice.ch
+│   │   │   │   │   ├── -nmcli.ch
+│   │   │   │   │   ├── -node.ch
+│   │   │   │   │   ├── -ogit.ch
+│   │   │   │   │   ├── -perl.ch
+│   │   │   │   │   ├── -podman.ch
+│   │   │   │   │   ├── -precommand.ch
+│   │   │   │   │   ├── -printf.ch
+│   │   │   │   │   ├── -ruby.ch
+│   │   │   │   │   ├── -scp.ch
+│   │   │   │   │   ├── -sh.ch
+│   │   │   │   │   ├── -source.ch
+│   │   │   │   │   ├── -ssh.ch
+│   │   │   │   │   ├── -subcommand.ch
+│   │   │   │   │   ├── -subversion.ch
+│   │   │   │   │   ├── -vim.ch
+│   │   │   │   │   ├── -whatis.ch
+│   │   │   │   │   ├── -which.ch
+│   │   │   │   │   ├── -zinit.ch
+│   │   │   │   │   └── main-chroma.ch
+│   │   │   │   ├── CHANGELOG.md
+│   │   │   │   ├── CHROMA_GUIDE.adoc
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── README.md
+│   │   │   │   ├── THEME_GUIDE.md
+│   │   │   │   ├── _fast-theme
+│   │   │   │   ├── dot_fast-make-targets
+│   │   │   │   ├── dot_fast-read-ini-file
+│   │   │   │   ├── dot_fast-run-command
+│   │   │   │   ├── dot_fast-run-git-command
+│   │   │   │   ├── dot_fast-zts-read-all
+│   │   │   │   ├── dot_gitignore
+│   │   │   │   ├── dot_zunit.yml
+│   │   │   │   ├── fast-highlight
+│   │   │   │   ├── fast-string-highlight
+│   │   │   │   ├── fast-syntax-highlighting.plugin.zsh
+│   │   │   │   └── fast-theme
+│   │   │   ├── starship/
+│   │   │   │   ├── docs/
+│   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── ar-SA/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── bn-BD/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── ckb-IR/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── config/
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── de-DE/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── dot_vitepress/
+│   │   │   │   │   │   ├── theme/
+│   │   │   │   │   │   │   ├── index.css
+│   │   │   │   │   │   │   └── index.js
+│   │   │   │   │   │   └── config.mts
+│   │   │   │   │   ├── es-ES/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── faq/
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── fr-FR/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── guide/
+│   │   │   │   │   │   └── symlink_README.md
+│   │   │   │   │   ├── id-ID/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── installing/
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── it-IT/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── ja-JP/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── ko-KR/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── nl-NL/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── no-NO/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── pl-PL/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── presets/
+│   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   ├── pt-BR/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── pt-PT/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── public/
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── img/
+│   │   │   │   │   │   │   │   ├── bracketed-segments.png
+│   │   │   │   │   │   │   │   ├── catppuccin-powerline.png
+│   │   │   │   │   │   │   │   ├── gruvbox-rainbow.png
+│   │   │   │   │   │   │   │   ├── jetpack.png
+│   │   │   │   │   │   │   │   ├── nerd-font-symbols.png
+│   │   │   │   │   │   │   │   ├── no-empty-icons.png
+│   │   │   │   │   │   │   │   ├── no-runtime-versions.png
+│   │   │   │   │   │   │   │   ├── pastel-powerline.png
+│   │   │   │   │   │   │   │   ├── plain-text-symbols.png
+│   │   │   │   │   │   │   │   ├── pure-preset.png
+│   │   │   │   │   │   │   │   └── tokyo-night.png
+│   │   │   │   │   │   │   └── toml/
+│   │   │   │   │   │   │       ├── bracketed-segments.toml
+│   │   │   │   │   │   │       ├── catppuccin-powerline.toml
+│   │   │   │   │   │   │       ├── gruvbox-rainbow.toml
+│   │   │   │   │   │   │       ├── jetpack.toml
+│   │   │   │   │   │   │       ├── nerd-font-symbols.toml
+│   │   │   │   │   │   │       ├── no-empty-icons.toml
+│   │   │   │   │   │   │       ├── no-nerd-font.toml
+│   │   │   │   │   │   │       ├── no-runtime-versions.toml
+│   │   │   │   │   │   │       ├── pastel-powerline.toml
+│   │   │   │   │   │   │       ├── plain-text-symbols.toml
+│   │   │   │   │   │   │       ├── pure-preset.toml
+│   │   │   │   │   │   │       └── tokyo-night.toml
+│   │   │   │   │   │   ├── _redirects
+│   │   │   │   │   │   ├── demo.mp4
+│   │   │   │   │   │   ├── demo.webm
+│   │   │   │   │   │   ├── logo-uwu.png
+│   │   │   │   │   │   ├── nerd-font.woff2
+│   │   │   │   │   │   ├── robots.txt
+│   │   │   │   │   │   ├── symlink_config-schema.json
+│   │   │   │   │   │   ├── symlink_icon.png
+│   │   │   │   │   │   ├── symlink_install.sh
+│   │   │   │   │   │   ├── symlink_logo.png
+│   │   │   │   │   │   └── symlink_logo.svg
+│   │   │   │   │   ├── ru-RU/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── tr-TR/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── uk-UA/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── vi-VN/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── zh-CN/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── zh-TW/
+│   │   │   │   │   │   ├── advanced-config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── config/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── faq/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── guide/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── installing/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── migrating-to-0.45.0/
+│   │   │   │   │   │   │   └── README.md
+│   │   │   │   │   │   ├── presets/
+│   │   │   │   │   │   │   ├── README.md
+│   │   │   │   │   │   │   ├── bracketed-segments.md
+│   │   │   │   │   │   │   ├── catppuccin-powerline.md
+│   │   │   │   │   │   │   ├── gruvbox-rainbow.md
+│   │   │   │   │   │   │   ├── jetpack.md
+│   │   │   │   │   │   │   ├── nerd-font.md
+│   │   │   │   │   │   │   ├── no-empty-icons.md
+│   │   │   │   │   │   │   ├── no-nerd-font.md
+│   │   │   │   │   │   │   ├── no-runtimes.md
+│   │   │   │   │   │   │   ├── pastel-powerline.md
+│   │   │   │   │   │   │   ├── plain-text.md
+│   │   │   │   │   │   │   ├── pure-preset.md
+│   │   │   │   │   │   │   └── tokyo-night.md
+│   │   │   │   │   │   └── README.md
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   ├── package-lock.json
+│   │   │   │   │   └── package.json
+│   │   │   │   ├── dot_git/
+│   │   │   │   │   ├── hooks/
+│   │   │   │   │   │   ├── executable_applypatch-msg.sample
+│   │   │   │   │   │   ├── executable_commit-msg.sample
+│   │   │   │   │   │   ├── executable_fsmonitor-watchman.sample
+│   │   │   │   │   │   ├── executable_post-update.sample
+│   │   │   │   │   │   ├── executable_pre-applypatch.sample
+│   │   │   │   │   │   ├── executable_pre-commit.sample
+│   │   │   │   │   │   ├── executable_pre-merge-commit.sample
+│   │   │   │   │   │   ├── executable_pre-push.sample
+│   │   │   │   │   │   ├── executable_pre-rebase.sample
+│   │   │   │   │   │   ├── executable_pre-receive.sample
+│   │   │   │   │   │   ├── executable_prepare-commit-msg.sample
+│   │   │   │   │   │   ├── executable_push-to-checkout.sample
+│   │   │   │   │   │   ├── executable_sendemail-validate.sample
+│   │   │   │   │   │   └── executable_update.sample
+│   │   │   │   │   ├── info/
+│   │   │   │   │   │   └── exclude
+│   │   │   │   │   ├── logs/
+│   │   │   │   │   │   ├── refs/
+│   │   │   │   │   │   │   ├── heads/
+│   │   │   │   │   │   │   │   └── master
+│   │   │   │   │   │   │   └── remotes/
+│   │   │   │   │   │   │       └── origin/
+│   │   │   │   │   │   │           └── HEAD
+│   │   │   │   │   │   └── HEAD
+│   │   │   │   │   ├── objects/
+│   │   │   │   │   │   ├── info/
+│   │   │   │   │   │   │   └── .keep
+│   │   │   │   │   │   └── pack/
+│   │   │   │   │   │       ├── readonly_pack-083c020e72cd635f976b353fec25f69254f1fd7e.idx
+│   │   │   │   │   │       ├── readonly_pack-083c020e72cd635f976b353fec25f69254f1fd7e.pack
+│   │   │   │   │   │       └── readonly_pack-083c020e72cd635f976b353fec25f69254f1fd7e.rev
+│   │   │   │   │   ├── refs/
+│   │   │   │   │   │   ├── heads/
+│   │   │   │   │   │   │   └── master
+│   │   │   │   │   │   ├── remotes/
+│   │   │   │   │   │   │   └── origin/
+│   │   │   │   │   │   │       └── HEAD
+│   │   │   │   │   │   └── tags/
+│   │   │   │   │   │       └── .keep
+│   │   │   │   │   ├── HEAD
+│   │   │   │   │   ├── config
+│   │   │   │   │   ├── description
+│   │   │   │   │   ├── index
+│   │   │   │   │   ├── packed-refs
+│   │   │   │   │   └── shallow
+│   │   │   │   ├── dot_github/
+│   │   │   │   │   ├── ISSUE_TEMPLATE/
+│   │   │   │   │   │   ├── Bug_report.md
+│   │   │   │   │   │   ├── Feature_request.md
+│   │   │   │   │   │   └── config.yml
+│   │   │   │   │   ├── workflows/
+│   │   │   │   │   │   ├── crowdin-pretranslate.yml
+│   │   │   │   │   │   ├── format-workflow.yml
+│   │   │   │   │   │   ├── publish-docs.yml
+│   │   │   │   │   │   ├── release.yml
+│   │   │   │   │   │   ├── security-audit.yml
+│   │   │   │   │   │   ├── spell-check.yml
+│   │   │   │   │   │   └── workflow.yml
+│   │   │   │   │   ├── FUNDING.yml
+│   │   │   │   │   ├── PULL_REQUEST_TEMPLATE.md
+│   │   │   │   │   ├── config-schema.json
+│   │   │   │   │   └── renovate.json5
+│   │   │   │   ├── install/
+│   │   │   │   │   ├── macos_packages/
+│   │   │   │   │   │   ├── pkg_resources/
+│   │   │   │   │   │   │   ├── English.lproj/
+│   │   │   │   │   │   │   │   ├── conclusion.html
+│   │   │   │   │   │   │   │   ├── license.html
+│   │   │   │   │   │   │   │   └── welcome.html
+│   │   │   │   │   │   │   └── icon.png
+│   │   │   │   │   │   ├── aarch64.plist
+│   │   │   │   │   │   ├── build_and_notarize.sh
+│   │   │   │   │   │   ├── build_component_package.sh
+│   │   │   │   │   │   ├── build_distribution_package.sh
+│   │   │   │   │   │   ├── common.sh
+│   │   │   │   │   │   ├── readme.md
+│   │   │   │   │   │   └── x86_64.plist
+│   │   │   │   │   ├── windows/
+│   │   │   │   │   │   ├── choco/
+│   │   │   │   │   │   │   ├── chocolateyInstall.install.ps1
+│   │   │   │   │   │   │   ├── chocolateyInstall.portable.ps1
+│   │   │   │   │   │   │   ├── starship.nuspec
+│   │   │   │   │   │   │   └── update.ps1
+│   │   │   │   │   │   ├── pkg_resources/
+│   │   │   │   │   │   │   ├── Banner.bmp
+│   │   │   │   │   │   │   ├── Dialog.bmp
+│   │   │   │   │   │   │   └── LICENSE.rtf
+│   │   │   │   │   │   └── main.wxs
+│   │   │   │   │   └── executable_install.sh
+│   │   │   │   ├── media/
+│   │   │   │   │   ├── demo.gif
+│   │   │   │   │   ├── flag-br.png
+│   │   │   │   │   ├── flag-cn.png
+│   │   │   │   │   ├── flag-de.png
+│   │   │   │   │   ├── flag-es.png
+│   │   │   │   │   ├── flag-fr.png
+│   │   │   │   │   ├── flag-id.png
+│   │   │   │   │   ├── flag-it.png
+│   │   │   │   │   ├── flag-jp.png
+│   │   │   │   │   ├── flag-ru.png
+│   │   │   │   │   ├── flag-tw.png
+│   │   │   │   │   ├── flag-ua.png
+│   │   │   │   │   ├── flag-us.png
+│   │   │   │   │   ├── flag-vn.png
+│   │   │   │   │   ├── icon.ico
+│   │   │   │   │   ├── icon.png
+│   │   │   │   │   ├── icon.svg
+│   │   │   │   │   ├── logo.ai
+│   │   │   │   │   ├── logo.png
+│   │   │   │   │   └── logo.svg
+│   │   │   │   ├── src/
+│   │   │   │   │   ├── configs/
+│   │   │   │   │   │   ├── aws.rs
+│   │   │   │   │   │   ├── azure.rs
+│   │   │   │   │   │   ├── battery.rs
+│   │   │   │   │   │   ├── buf.rs
+│   │   │   │   │   │   ├── bun.rs
+│   │   │   │   │   │   ├── c.rs
+│   │   │   │   │   │   ├── cc.rs
+│   │   │   │   │   │   ├── character.rs
+│   │   │   │   │   │   ├── cmake.rs
+│   │   │   │   │   │   ├── cmd_duration.rs
+│   │   │   │   │   │   ├── cobol.rs
+│   │   │   │   │   │   ├── conda.rs
+│   │   │   │   │   │   ├── container.rs
+│   │   │   │   │   │   ├── cpp.rs
+│   │   │   │   │   │   ├── crystal.rs
+│   │   │   │   │   │   ├── custom.rs
+│   │   │   │   │   │   ├── daml.rs
+│   │   │   │   │   │   ├── dart.rs
+│   │   │   │   │   │   ├── deno.rs
+│   │   │   │   │   │   ├── directory.rs
+│   │   │   │   │   │   ├── docker_context.rs
+│   │   │   │   │   │   ├── dotnet.rs
+│   │   │   │   │   │   ├── elixir.rs
+│   │   │   │   │   │   ├── elm.rs
+│   │   │   │   │   │   ├── env_var.rs
+│   │   │   │   │   │   ├── erlang.rs
+│   │   │   │   │   │   ├── executable_direnv.rs
+│   │   │   │   │   │   ├── executable_mise.rs
+│   │   │   │   │   │   ├── executable_nix_shell.rs
+│   │   │   │   │   │   ├── fennel.rs
+│   │   │   │   │   │   ├── fill.rs
+│   │   │   │   │   │   ├── fossil_branch.rs
+│   │   │   │   │   │   ├── fossil_metrics.rs
+│   │   │   │   │   │   ├── gcloud.rs
+│   │   │   │   │   │   ├── git_branch.rs
+│   │   │   │   │   │   ├── git_commit.rs
+│   │   │   │   │   │   ├── git_metrics.rs
+│   │   │   │   │   │   ├── git_state.rs
+│   │   │   │   │   │   ├── git_status.rs
+│   │   │   │   │   │   ├── gleam.rs
+│   │   │   │   │   │   ├── go.rs
+│   │   │   │   │   │   ├── gradle.rs
+│   │   │   │   │   │   ├── guix_shell.rs
+│   │   │   │   │   │   ├── haskell.rs
+│   │   │   │   │   │   ├── haxe.rs
+│   │   │   │   │   │   ├── helm.rs
+│   │   │   │   │   │   ├── hg_branch.rs
+│   │   │   │   │   │   ├── hg_state.rs
+│   │   │   │   │   │   ├── hostname.rs
+│   │   │   │   │   │   ├── java.rs
+│   │   │   │   │   │   ├── jobs.rs
+│   │   │   │   │   │   ├── julia.rs
+│   │   │   │   │   │   ├── kotlin.rs
+│   │   │   │   │   │   ├── kubernetes.rs
+│   │   │   │   │   │   ├── line_break.rs
+│   │   │   │   │   │   ├── localip.rs
+│   │   │   │   │   │   ├── lua.rs
+│   │   │   │   │   │   ├── memory_usage.rs
+│   │   │   │   │   │   ├── meson.rs
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   ├── mojo.rs
+│   │   │   │   │   │   ├── nats.rs
+│   │   │   │   │   │   ├── netns.rs
+│   │   │   │   │   │   ├── nim.rs
+│   │   │   │   │   │   ├── nodejs.rs
+│   │   │   │   │   │   ├── ocaml.rs
+│   │   │   │   │   │   ├── odin.rs
+│   │   │   │   │   │   ├── opa.rs
+│   │   │   │   │   │   ├── openstack.rs
+│   │   │   │   │   │   ├── os.rs
+│   │   │   │   │   │   ├── package.rs
+│   │   │   │   │   │   ├── perl.rs
+│   │   │   │   │   │   ├── php.rs
+│   │   │   │   │   │   ├── pijul_channel.rs
+│   │   │   │   │   │   ├── pixi.rs
+│   │   │   │   │   │   ├── pulumi.rs
+│   │   │   │   │   │   ├── purescript.rs
+│   │   │   │   │   │   ├── python.rs
+│   │   │   │   │   │   ├── quarto.rs
+│   │   │   │   │   │   ├── raku.rs
+│   │   │   │   │   │   ├── red.rs
+│   │   │   │   │   │   ├── rlang.rs
+│   │   │   │   │   │   ├── ruby.rs
+│   │   │   │   │   │   ├── rust.rs
+│   │   │   │   │   │   ├── scala.rs
+│   │   │   │   │   │   ├── shell.rs
+│   │   │   │   │   │   ├── shlvl.rs
+│   │   │   │   │   │   ├── singularity.rs
+│   │   │   │   │   │   ├── solidity.rs
+│   │   │   │   │   │   ├── spack.rs
+│   │   │   │   │   │   ├── starship_root.rs
+│   │   │   │   │   │   ├── status.rs
+│   │   │   │   │   │   ├── sudo.rs
+│   │   │   │   │   │   ├── swift.rs
+│   │   │   │   │   │   ├── terraform.rs
+│   │   │   │   │   │   ├── time.rs
+│   │   │   │   │   │   ├── typst.rs
+│   │   │   │   │   │   ├── username.rs
+│   │   │   │   │   │   ├── v.rs
+│   │   │   │   │   │   ├── vagrant.rs
+│   │   │   │   │   │   ├── vcsh.rs
+│   │   │   │   │   │   ├── xmake.rs
+│   │   │   │   │   │   └── zig.rs
+│   │   │   │   │   ├── formatter/
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   ├── model.rs
+│   │   │   │   │   │   ├── parser.rs
+│   │   │   │   │   │   ├── spec.pest
+│   │   │   │   │   │   ├── string_formatter.rs
+│   │   │   │   │   │   └── version.rs
+│   │   │   │   │   ├── init/
+│   │   │   │   │   │   ├── executable_starship.ps1
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   ├── starship.bash
+│   │   │   │   │   │   ├── starship.elv
+│   │   │   │   │   │   ├── starship.fish
+│   │   │   │   │   │   ├── starship.ion
+│   │   │   │   │   │   ├── starship.lua
+│   │   │   │   │   │   ├── starship.nu
+│   │   │   │   │   │   ├── starship.tcsh
+│   │   │   │   │   │   ├── starship.xsh
+│   │   │   │   │   │   └── starship.zsh
+│   │   │   │   │   ├── modules/
+│   │   │   │   │   │   ├── utils/
+│   │   │   │   │   │   │   ├── directory.rs
+│   │   │   │   │   │   │   ├── directory_nix.rs
+│   │   │   │   │   │   │   ├── directory_win.rs
+│   │   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   │   ├── path.rs
+│   │   │   │   │   │   │   └── truncate.rs
+│   │   │   │   │   │   ├── aws.rs
+│   │   │   │   │   │   ├── azure.rs
+│   │   │   │   │   │   ├── battery.rs
+│   │   │   │   │   │   ├── buf.rs
+│   │   │   │   │   │   ├── bun.rs
+│   │   │   │   │   │   ├── c.rs
+│   │   │   │   │   │   ├── cc.rs
+│   │   │   │   │   │   ├── character.rs
+│   │   │   │   │   │   ├── cmake.rs
+│   │   │   │   │   │   ├── cmd_duration.rs
+│   │   │   │   │   │   ├── cobol.rs
+│   │   │   │   │   │   ├── conda.rs
+│   │   │   │   │   │   ├── container.rs
+│   │   │   │   │   │   ├── cpp.rs
+│   │   │   │   │   │   ├── crystal.rs
+│   │   │   │   │   │   ├── custom.rs
+│   │   │   │   │   │   ├── daml.rs
+│   │   │   │   │   │   ├── dart.rs
+│   │   │   │   │   │   ├── deno.rs
+│   │   │   │   │   │   ├── directory.rs
+│   │   │   │   │   │   ├── direnv.rs
+│   │   │   │   │   │   ├── docker_context.rs
+│   │   │   │   │   │   ├── dotnet.rs
+│   │   │   │   │   │   ├── elixir.rs
+│   │   │   │   │   │   ├── elm.rs
+│   │   │   │   │   │   ├── env_var.rs
+│   │   │   │   │   │   ├── erlang.rs
+│   │   │   │   │   │   ├── fennel.rs
+│   │   │   │   │   │   ├── fill.rs
+│   │   │   │   │   │   ├── fossil_branch.rs
+│   │   │   │   │   │   ├── fossil_metrics.rs
+│   │   │   │   │   │   ├── gcloud.rs
+│   │   │   │   │   │   ├── git_branch.rs
+│   │   │   │   │   │   ├── git_commit.rs
+│   │   │   │   │   │   ├── git_metrics.rs
+│   │   │   │   │   │   ├── git_state.rs
+│   │   │   │   │   │   ├── git_status.rs
+│   │   │   │   │   │   ├── gleam.rs
+│   │   │   │   │   │   ├── golang.rs
+│   │   │   │   │   │   ├── gradle.rs
+│   │   │   │   │   │   ├── guix_shell.rs
+│   │   │   │   │   │   ├── haskell.rs
+│   │   │   │   │   │   ├── haxe.rs
+│   │   │   │   │   │   ├── helm.rs
+│   │   │   │   │   │   ├── hg_branch.rs
+│   │   │   │   │   │   ├── hg_state.rs
+│   │   │   │   │   │   ├── hostname.rs
+│   │   │   │   │   │   ├── java.rs
+│   │   │   │   │   │   ├── jobs.rs
+│   │   │   │   │   │   ├── julia.rs
+│   │   │   │   │   │   ├── kotlin.rs
+│   │   │   │   │   │   ├── kubernetes.rs
+│   │   │   │   │   │   ├── line_break.rs
+│   │   │   │   │   │   ├── localip.rs
+│   │   │   │   │   │   ├── lua.rs
+│   │   │   │   │   │   ├── memory_usage.rs
+│   │   │   │   │   │   ├── meson.rs
+│   │   │   │   │   │   ├── mise.rs
+│   │   │   │   │   │   ├── mod.rs
+│   │   │   │   │   │   ├── mojo.rs
+│   │   │   │   │   │   ├── nats.rs
+│   │   │   │   │   │   ├── netns.rs
+│   │   │   │   │   │   ├── nim.rs
+│   │   │   │   │   │   ├── nix_shell.rs
+│   │   │   │   │   │   ├── nodejs.rs
+│   │   │   │   │   │   ├── ocaml.rs
+│   │   │   │   │   │   ├── odin.rs
+│   │   │   │   │   │   ├── opa.rs
+│   │   │   │   │   │   ├── openstack.rs
+│   │   │   │   │   │   ├── os.rs
+│   │   │   │   │   │   ├── package.rs
+│   │   │   │   │   │   ├── perl.rs
+│   │   │   │   │   │   ├── php.rs
+│   │   │   │   │   │   ├── pijul_channel.rs
+│   │   │   │   │   │   ├── pixi.rs
+│   │   │   │   │   │   ├── pulumi.rs
+│   │   │   │   │   │   ├── purescript.rs
+│   │   │   │   │   │   ├── python.rs
+│   │   │   │   │   │   ├── quarto.rs
+│   │   │   │   │   │   ├── raku.rs
+│   │   │   │   │   │   ├── red.rs
+│   │   │   │   │   │   ├── rlang.rs
+│   │   │   │   │   │   ├── ruby.rs
+│   │   │   │   │   │   ├── rust.rs
+│   │   │   │   │   │   ├── scala.rs
+│   │   │   │   │   │   ├── shell.rs
+│   │   │   │   │   │   ├── shlvl.rs
+│   │   │   │   │   │   ├── singularity.rs
+│   │   │   │   │   │   ├── solidity.rs
+│   │   │   │   │   │   ├── spack.rs
+│   │   │   │   │   │   ├── status.rs
+│   │   │   │   │   │   ├── sudo.rs
+│   │   │   │   │   │   ├── swift.rs
+│   │   │   │   │   │   ├── terraform.rs
+│   │   │   │   │   │   ├── time.rs
+│   │   │   │   │   │   ├── typst.rs
+│   │   │   │   │   │   ├── username.rs
+│   │   │   │   │   │   ├── vagrant.rs
+│   │   │   │   │   │   ├── vcsh.rs
+│   │   │   │   │   │   ├── vlang.rs
+│   │   │   │   │   │   ├── xmake.rs
+│   │   │   │   │   │   └── zig.rs
+│   │   │   │   │   ├── test/
+│   │   │   │   │   │   ├── fixtures/
+│   │   │   │   │   │   │   ├── git-repo.bundle
+│   │   │   │   │   │   │   └── hg-repo.bundle
+│   │   │   │   │   │   └── mod.rs
+│   │   │   │   │   ├── bug_report.rs
+│   │   │   │   │   ├── config.rs
+│   │   │   │   │   ├── configure.rs
+│   │   │   │   │   ├── context.rs
+│   │   │   │   │   ├── context_env.rs
+│   │   │   │   │   ├── lib.rs
+│   │   │   │   │   ├── logger.rs
+│   │   │   │   │   ├── main.rs
+│   │   │   │   │   ├── module.rs
+│   │   │   │   │   ├── print.rs
+│   │   │   │   │   ├── segment.rs
+│   │   │   │   │   ├── serde_utils.rs
+│   │   │   │   │   └── utils.rs
+│   │   │   │   ├── CHANGELOG.md
+│   │   │   │   ├── CODE_OF_CONDUCT.md
+│   │   │   │   ├── CONTRIBUTING.md
+│   │   │   │   ├── Cargo.lock
+│   │   │   │   ├── Cargo.toml
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── README.md
+│   │   │   │   ├── SECURITY.md
+│   │   │   │   ├── build.rs
+│   │   │   │   ├── clippy.toml
+│   │   │   │   ├── crowdin.yml
+│   │   │   │   ├── deny.toml
+│   │   │   │   ├── dot_codecov.yml
+│   │   │   │   ├── dot_dprint.json
+│   │   │   │   ├── dot_gitattributes
+│   │   │   │   ├── dot_gitignore
+│   │   │   │   ├── dot_rustfmt.toml
+│   │   │   │   ├── release-please-config.json
+│   │   │   │   ├── starship.exe.manifest
+│   │   │   │   └── typos.toml
+│   │   │   ├── zsh-autosuggestions/
+│   │   │   │   ├── dot_git/
+│   │   │   │   │   ├── hooks/
+│   │   │   │   │   │   ├── executable_applypatch-msg.sample
+│   │   │   │   │   │   ├── executable_commit-msg.sample
+│   │   │   │   │   │   ├── executable_fsmonitor-watchman.sample
+│   │   │   │   │   │   ├── executable_post-update.sample
+│   │   │   │   │   │   ├── executable_pre-applypatch.sample
+│   │   │   │   │   │   ├── executable_pre-commit.sample
+│   │   │   │   │   │   ├── executable_pre-merge-commit.sample
+│   │   │   │   │   │   ├── executable_pre-push.sample
+│   │   │   │   │   │   ├── executable_pre-rebase.sample
+│   │   │   │   │   │   ├── executable_pre-receive.sample
+│   │   │   │   │   │   ├── executable_prepare-commit-msg.sample
+│   │   │   │   │   │   ├── executable_push-to-checkout.sample
+│   │   │   │   │   │   ├── executable_sendemail-validate.sample
+│   │   │   │   │   │   └── executable_update.sample
+│   │   │   │   │   ├── info/
+│   │   │   │   │   │   └── exclude
+│   │   │   │   │   ├── logs/
+│   │   │   │   │   │   ├── refs/
+│   │   │   │   │   │   │   ├── heads/
+│   │   │   │   │   │   │   │   └── master
+│   │   │   │   │   │   │   └── remotes/
+│   │   │   │   │   │   │       └── origin/
+│   │   │   │   │   │   │           └── HEAD
+│   │   │   │   │   │   └── HEAD
+│   │   │   │   │   ├── objects/
+│   │   │   │   │   │   ├── info/
+│   │   │   │   │   │   │   └── .keep
+│   │   │   │   │   │   └── pack/
+│   │   │   │   │   │       ├── readonly_pack-dfb0a1ba282115f6bc35f2c9b7db7e50b67aa8d7.idx
+│   │   │   │   │   │       ├── readonly_pack-dfb0a1ba282115f6bc35f2c9b7db7e50b67aa8d7.pack
+│   │   │   │   │   │       └── readonly_pack-dfb0a1ba282115f6bc35f2c9b7db7e50b67aa8d7.rev
+│   │   │   │   │   ├── refs/
+│   │   │   │   │   │   ├── heads/
+│   │   │   │   │   │   │   └── master
+│   │   │   │   │   │   ├── remotes/
+│   │   │   │   │   │   │   └── origin/
+│   │   │   │   │   │   │       └── HEAD
+│   │   │   │   │   │   └── tags/
+│   │   │   │   │   │       └── .keep
+│   │   │   │   │   ├── HEAD
+│   │   │   │   │   ├── config
+│   │   │   │   │   ├── description
+│   │   │   │   │   ├── index
+│   │   │   │   │   ├── packed-refs
+│   │   │   │   │   └── shallow
+│   │   │   │   ├── dot_github/
+│   │   │   │   │   ├── ISSUE_TEMPLATE/
+│   │   │   │   │   │   ├── bug-report.md
+│   │   │   │   │   │   └── feature_request.md
+│   │   │   │   │   └── workflows/
+│   │   │   │   │       └── integration.yml
+│   │   │   │   ├── spec/
+│   │   │   │   │   ├── integrations/
+│   │   │   │   │   │   ├── auto_cd_spec.rb
+│   │   │   │   │   │   ├── bracketed_paste_magic_spec.rb
+│   │   │   │   │   │   ├── client_zpty_spec.rb
+│   │   │   │   │   │   ├── glob_subst_spec.rb
+│   │   │   │   │   │   ├── rebound_bracket_spec.rb
+│   │   │   │   │   │   ├── vi_mode_spec.rb
+│   │   │   │   │   │   ├── wrapped_widget_spec.rb
+│   │   │   │   │   │   └── zle_input_stack_spec.rb
+│   │   │   │   │   ├── options/
+│   │   │   │   │   │   ├── buffer_max_size_spec.rb
+│   │   │   │   │   │   ├── highlight_style_spec.rb
+│   │   │   │   │   │   ├── original_widget_prefix_spec.rb
+│   │   │   │   │   │   ├── strategy_spec.rb
+│   │   │   │   │   │   └── widget_lists_spec.rb
+│   │   │   │   │   ├── strategies/
+│   │   │   │   │   │   ├── completion_spec.rb
+│   │   │   │   │   │   ├── history_spec.rb
+│   │   │   │   │   │   ├── match_prev_cmd_spec.rb
+│   │   │   │   │   │   └── special_characters_helper.rb
+│   │   │   │   │   ├── widgets/
+│   │   │   │   │   │   ├── disable_spec.rb
+│   │   │   │   │   │   ├── enable_spec.rb
+│   │   │   │   │   │   ├── fetch_spec.rb
+│   │   │   │   │   │   └── toggle_spec.rb
+│   │   │   │   │   ├── async_spec.rb
+│   │   │   │   │   ├── kill_ring_spec.rb
+│   │   │   │   │   ├── line_init_spec.rb
+│   │   │   │   │   ├── multi_line_spec.rb
+│   │   │   │   │   ├── spec_helper.rb
+│   │   │   │   │   └── terminal_session.rb
+│   │   │   │   ├── src/
+│   │   │   │   │   ├── strategies/
+│   │   │   │   │   │   ├── completion.zsh
+│   │   │   │   │   │   ├── history.zsh
+│   │   │   │   │   │   └── match_prev_cmd.zsh
+│   │   │   │   │   ├── async.zsh
+│   │   │   │   │   ├── bind.zsh
+│   │   │   │   │   ├── config.zsh
+│   │   │   │   │   ├── fetch.zsh
+│   │   │   │   │   ├── highlight.zsh
+│   │   │   │   │   ├── start.zsh
+│   │   │   │   │   ├── util.zsh
+│   │   │   │   │   └── widgets.zsh
+│   │   │   │   ├── CHANGELOG.md
+│   │   │   │   ├── DESCRIPTION
+│   │   │   │   ├── Dockerfile
+│   │   │   │   ├── Gemfile
+│   │   │   │   ├── Gemfile.lock
+│   │   │   │   ├── INSTALL.md
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── README.md
+│   │   │   │   ├── URL
+│   │   │   │   ├── VERSION
+│   │   │   │   ├── ZSH_VERSIONS
+│   │   │   │   ├── dot_editorconfig
+│   │   │   │   ├── dot_gitignore
+│   │   │   │   ├── dot_rspec
+│   │   │   │   ├── dot_rubocop.yml
+│   │   │   │   ├── dot_ruby-version
+│   │   │   │   ├── executable_install_test_zsh.sh
+│   │   │   │   ├── zsh-autosuggestions.plugin.zsh
+│   │   │   │   └── zsh-autosuggestions.zsh
+│   │   │   └── zsh-helix-mode/
+│   │   │       ├── dot_git/
+│   │   │       │   ├── hooks/
+│   │   │       │   │   ├── executable_applypatch-msg.sample
+│   │   │       │   │   ├── executable_commit-msg.sample
+│   │   │       │   │   ├── executable_fsmonitor-watchman.sample
+│   │   │       │   │   ├── executable_post-update.sample
+│   │   │       │   │   ├── executable_pre-applypatch.sample
+│   │   │       │   │   ├── executable_pre-commit.sample
+│   │   │       │   │   ├── executable_pre-merge-commit.sample
+│   │   │       │   │   ├── executable_pre-push.sample
+│   │   │       │   │   ├── executable_pre-rebase.sample
+│   │   │       │   │   ├── executable_pre-receive.sample
+│   │   │       │   │   ├── executable_prepare-commit-msg.sample
+│   │   │       │   │   ├── executable_push-to-checkout.sample
+│   │   │       │   │   ├── executable_sendemail-validate.sample
+│   │   │       │   │   └── executable_update.sample
+│   │   │       │   ├── info/
+│   │   │       │   │   └── exclude
+│   │   │       │   ├── logs/
+│   │   │       │   │   ├── refs/
+│   │   │       │   │   │   ├── heads/
+│   │   │       │   │   │   │   └── main
+│   │   │       │   │   │   └── remotes/
+│   │   │       │   │   │       └── origin/
+│   │   │       │   │   │           └── HEAD
+│   │   │       │   │   └── HEAD
+│   │   │       │   ├── objects/
+│   │   │       │   │   ├── info/
+│   │   │       │   │   │   └── .keep
+│   │   │       │   │   └── pack/
+│   │   │       │   │       ├── readonly_pack-7b25ea0398da6e2541de8db44a09808c949c2c47.idx
+│   │   │       │   │       ├── readonly_pack-7b25ea0398da6e2541de8db44a09808c949c2c47.pack
+│   │   │       │   │       └── readonly_pack-7b25ea0398da6e2541de8db44a09808c949c2c47.rev
+│   │   │       │   ├── refs/
+│   │   │       │   │   ├── heads/
+│   │   │       │   │   │   └── main
+│   │   │       │   │   ├── remotes/
+│   │   │       │   │   │   └── origin/
+│   │   │       │   │   │       └── HEAD
+│   │   │       │   │   └── tags/
+│   │   │       │   │       └── .keep
+│   │   │       │   ├── HEAD
+│   │   │       │   ├── config
+│   │   │       │   ├── description
+│   │   │       │   ├── index
+│   │   │       │   ├── packed-refs
+│   │   │       │   └── shallow
+│   │   │       ├── LICENSE
+│   │   │       ├── README.md
+│   │   │       ├── default.nix
+│   │   │       ├── flake.lock
+│   │   │       ├── flake.nix
+│   │   │       ├── zsh-helix-mode.plugin.zsh
+│   │   │       └── zsh-helix-mode.zsh
+│   │   └── dot_zshrc
+│   ├── Brewfile
+│   ├── mimeapps.list
+│   └── starship.toml
+├── dot_local/
+│   ├── private_state/
+│   │   └── DankMaterialShell/
+│   │       └── session.json.tmpl
+│   └── share/
+│       ├── private_applications/
+│       │   └── yazi.desktop
+│       └── zed/
+│           └── extensions/
+│               ├── installed/
+│               │   ├── html/
+│               │   │   ├── grammars/
+│               │   │   │   └── executable_html.wasm
+│               │   │   ├── languages/
+│               │   │   │   └── html/
+│               │   │   │       ├── brackets.scm
+│               │   │   │       ├── config.toml
+│               │   │   │       ├── highlights.scm
+│               │   │   │       ├── indents.scm
+│               │   │   │       ├── injections.scm
+│               │   │   │       ├── outline.scm
+│               │   │   │       └── overrides.scm
+│               │   │   ├── extension.toml
+│               │   │   └── extension.wasm
+│               │   └── nord/
+│               │       ├── themes/
+│               │       │   └── nord.json
+│               │       └── extension.toml
+│               ├── work/
+│               │   └── html/
+│               │       └── .keep
+│               └── index.json
+├── dot_zen/
+│   ├── default/
+│   │   ├── chrome/
+│   │   │   └── userChrome.css
+│   │   └── user.js.tmpl
+│   └── profiles.ini.tmpl
+├── .chezmoi.toml.tmpl
+├── .chezmoiignore
+├── README.md
+├── dot_bashrc
+└── dot_zshenv
+
+# BEGIN FILE CONTENTS
+
+# File: .chezmoidata/packages.yaml
+
+packages:
+  arch:
+    aur:
+      base:
+        - timeshift-autosnap
+        - wleave
+        - zen-browser-bin
+        - helium-browser-bin
+        - nordzy-icon-theme
+        - nordic-theme
+        - bibata-cursor-theme
+        - anydesk-bin
+        - lmstudio
+        - mpls-bin
+      river:
+        - wideriver 
+    pacman:
+      base:
+        - wget
+        - git
+        - snapper
+        - snap-pac
+        - wayland
+        - wayland-protocols
+        - network-manager-applet
+        - vim
+        - nano
+        - polkit
+        - grub-btrfs
+        - chezmoi
+        - pipewire
+        - pipewire-pulse
+        - pipewire-alsa
+        - pipewire-jack
+        - pipewire-dinit
+        - pipewire-pulse-dinit
+        - wireplumber-dinit
+        - wireplumber
+        - pavucontrol
+        - gtklock
+        - hypridle
+        - bluez
+        - blueman
+        - wpaperd
+        - ghostty
+        - yazi
+        - qemu-desktop
+        - libvirt
+        - virt-manager
+        - virt-viewer
+        - edk2-ovmf
+        - spice
+        - spice-gtk
+        - spice-protocol
+        - qbittorrent
+        - prettierd
+        - biome
+        - gopls
+        - golangci-lint
+        - p7zip
+        - wl-clipboard
+        - cliphist
+        - wf-recorder
+        - brightnessctl
+        - gammastep
+        - grim
+        - fuzzel
+        - slurp
+        - bat
+        - zed
+        - btop
+        - docker
+        - ttf-jetbrains-mono-nerd
+        - ttf-jetbrains-mono
+        - ttf-nerd-fonts-symbols
+        - fastfetch
+        - keepassxc
+        - rclone
+        - zathura
+        - zathura-pdf-poppler
+        - imv
+        - mpd
+        - mpc
+        - rmpc
+        - mpv
+        - mako
+        - zsh
+        - syncthing
+        - thunar
+        - thunar-archive-plugin
+        - thunar-volman
+        - xarchiver
+        - gvfs-mtp
+        - gvfs-gphoto2
+        - gvfs-smb
+        - gvfs-nfs
+        - android-tools
+        - mediainfo
+        - mpd-mpris
+        - playerctl
+        - alsa-firmware
+        - docker-compose
+        - docker-buildx
+        - duf
+        - qt5ct
+        - qt6ct
+        - qt5-wayland
+        - qt6-wayland
+        - fd
+        - fzf
+        - lazygit
+        - helix
+        - ripgrep
+        - starship
+        - uv
+        - zoxide
+        - zig
+      river:
+        - river
+        - xorg-xwayland
+        - wlroots
+        - xdg-desktop-portal-wlr
+        - xdg-desktop-portal-gtk
+
+
+# File: .chezmoiscripts/run_once_after_setup-snapper.sh.tmpl
+
+{{ if eq .chezmoi.osRelease.id "arch" -}}
+#!/bin/bash
+# Chezmoi run_once script to setup Snapper + snap-pac
+# Save as: ~/.local/share/chezmoi/run_once_setup-snapper.sh.tmpl
+
+set -e
+
+echo "==> Setting up Snapper + snap-pac..."
+
+# Check if running on Btrfs
+if ! findmnt -n -o FSTYPE / | grep -q btrfs; then
+    echo "ERROR: Root filesystem is not Btrfs. Snapper requires Btrfs."
+    exit 1
+fi
+
+# Install packages if not already installed
+if ! pacman -Q snapper snap-pac &>/dev/null; then
+    echo "Installing snapper and snap-pac..."
+    sudo pacman -S --needed --noconfirm snapper snap-pac
+else
+    echo "Snapper and snap-pac already installed"
+fi
+
+# Create root config if it doesn't exist
+if [ ! -f /etc/snapper/configs/root ]; then
+    echo "Creating Snapper configuration for root..."
+    
+    # Unmount .snapshots if mounted
+    if mountpoint -q /.snapshots 2>/dev/null; then
+        sudo umount /.snapshots
+    fi
+    
+    # Remove existing .snapshots directory/subvolume
+    if [ -d /.snapshots ]; then
+        # Try to delete as subvolume first, then as directory
+        sudo btrfs subvolume delete /.snapshots 2>/dev/null || sudo rm -rf /.snapshots
+    fi
+    
+    # Create configuration (this creates .snapshots subvolume)
+    sudo snapper -c root create-config /
+    
+    echo "Root configuration created"
+else
+    echo "Snapper root configuration already exists"
+fi
+
+# Configure snapshot retention
+echo "Configuring snapshot retention policy..."
+sudo tee /etc/snapper/configs/root > /dev/null << 'EOF'
+# subvolume to snapshot
+SUBVOLUME="/"
+
+# filesystem type
+FSTYPE="btrfs"
+
+# btrfs qgroup for space aware cleanup algorithms
+QGROUP=""
+
+# fraction or absolute size of the filesystems space the snapshots may use
+SPACE_LIMIT="0.5"
+
+# fraction or absolute size of the filesystems space that should be free
+FREE_LIMIT="0.2"
+
+# users and groups allowed to work with config
+ALLOW_USERS=""
+ALLOW_GROUPS=""
+
+# sync users and groups from ALLOW_USERS and ALLOW_GROUPS to .snapshots
+# directory
+SYNC_ACL="no"
+
+# start comparing pre- and post-snapshot in background after creating
+# post-snapshot
+BACKGROUND_COMPARISON="yes"
+
+# run daily number cleanup
+NUMBER_CLEANUP="yes"
+
+# limit for number cleanup
+NUMBER_MIN_AGE="1800"
+NUMBER_LIMIT="10"
+NUMBER_LIMIT_IMPORTANT="10"
+
+# create hourly snapshots
+TIMELINE_CREATE="yes"
+
+# cleanup hourly snapshots after some time
+TIMELINE_CLEANUP="yes"
+
+# limits for timeline cleanup
+TIMELINE_MIN_AGE="1800"
+TIMELINE_LIMIT_HOURLY="5"
+TIMELINE_LIMIT_DAILY="7"
+TIMELINE_LIMIT_WEEKLY="0"
+TIMELINE_LIMIT_MONTHLY="0"
+TIMELINE_LIMIT_YEARLY="0"
+
+# cleanup empty pre-post-pairs
+EMPTY_PRE_POST_CLEANUP="yes"
+
+# limits for empty pre-post-pair cleanup
+EMPTY_PRE_POST_MIN_AGE="1800"
+EOF
+
+echo "Retention policy configured"
+
+# Enable and start timers
+echo "Enabling Snapper timers..."
+sudo systemctl enable --now snapper-timeline.timer
+sudo systemctl enable --now snapper-cleanup.timer
+
+# Create initial snapshot
+if [ $(sudo snapper -c root list | wc -l) -le 2 ]; then
+    echo "Creating initial snapshot..."
+    sudo snapper -c root create --description "Initial snapshot after setup"
+fi
+
+# Optional: Configure home if it's a separate subvolume
+if mountpoint -q /home && findmnt -n -o FSTYPE /home | grep -q btrfs; then
+    if [ ! -f /etc/snapper/configs/home ]; then
+        echo "Detected separate /home subvolume, creating configuration..."
+        
+        if mountpoint -q /home/.snapshots 2>/dev/null; then
+            sudo umount /home/.snapshots
+        fi
+        
+        if [ -d /home/.snapshots ]; then
+            sudo btrfs subvolume delete /home/.snapshots 2>/dev/null || sudo rm -rf /home/.snapshots
+        fi
+        
+        sudo snapper -c home create-config /home
+        
+        # Less aggressive retention for home
+        sudo sed -i 's/TIMELINE_LIMIT_HOURLY="[0-9]*"/TIMELINE_LIMIT_HOURLY="3"/' /etc/snapper/configs/home
+        sudo sed -i 's/TIMELINE_LIMIT_DAILY="[0-9]*"/TIMELINE_LIMIT_DAILY="5"/' /etc/snapper/configs/home
+        
+        sudo snapper -c home create --description "Initial home snapshot"
+        echo "Home configuration created"
+    fi
+fi
+
+echo ""
+echo "==> Snapper setup complete!"
+echo ""
+echo "Useful commands:"
+echo "  sudo snapper -c root list                    # List snapshots"
+echo "  sudo snapper -c root create -d 'description' # Manual snapshot"
+echo "  sudo snapper -c root delete X                # Delete snapshot"
+echo "  sudo snapper -c root status X..Y             # Compare snapshots"
+echo "  sudo snapper -c root undochange X..Y         # Rollback changes"
+echo ""
+echo "snap-pac will automatically create snapshots before/after pacman updates"
+
+
+# File: .chezmoiscripts/run_once_before_install-yay.sh.tmpl
+
+{{ if eq .chezmoi.osRelease.id "arch" -}}
+#! /bin/bash
+set -e
+
+# Ensure pacman-contrib is installed for `checkupdates`
+sudo pacman -S --noconfirm --needed pacman-contrib
+
+# Install yay (AUR helper) if not already installed
+if ! command -v yay &> /dev/null; then
+    echo "Installing yay..."
+    pushd /tmp
+    sudo pacman -S --noconfirm --needed git base-devel
+    git clone https://aur.archlinux.org/yay-bin.git
+    cd yay-bin
+    makepkg -si --noconfirm
+    popd
+fi
+{{ end -}}
+
+
+
+# File: .chezmoiscripts/run_onchange_after_mpd-enable.sh
+
+#!/bin/bash
+set -e
+
+echo "Setting up MPD systemd service..."
+
+# Reload systemd to recognize changes
+systemctl --user daemon-reload
+
+# Enable and start MPD
+systemctl --user enable mpd.service
+systemctl --user start mpd.service
+
+# Check status
+if systemctl --user is-active --quiet mpd.service; then
+    echo "✓ MPD is running!"
+    systemctl --user status mpd.service --no-pager
+else
+    echo "✗ Failed to start MPD. Check logs:"
+    journalctl --user -u mpd.service --no-pager -n 20
+    exit 1
+fi
+
+
+# File: .chezmoiscripts/run_onchange_after_yazi-plugins.sh
+
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+echo -e "${GREEN}Setting up Yazi plugins...${NC}"
+
+# Check if ya (Yazi package manager) is available
+if ! command -v ya &> /dev/null; then
+    echo -e "${RED}✗ 'ya' command not found. Is Yazi installed?${NC}"
+    echo -e "${YELLOW}Install Yazi first: https://github.com/sxyazi/yazi${NC}"
+    exit 1
+fi
+
+# Install starship plugin
+echo -e "${YELLOW}Installing starship plugin...${NC}"
+if ya pack add Rolv-Apneseth/starship; then
+    echo -e "${GREEN}✓ Starship plugin installed${NC}"
+else
+    echo -e "${RED}✗ Failed to install starship plugin${NC}"
+fi
+
+# Install nord theme
+echo -e "${YELLOW}Installing nord theme...${NC}"
+if ya pack add AdithyanA2005/nord; then
+    echo -e "${GREEN}✓ Nord theme installed${NC}"
+else
+    echo -e "${RED}✗ Failed to install nord theme${NC}"
+fi
+
+
+# File: .chezmoiscripts/run_onchange_arch-install-packages.sh.tmpl
+
+{{ if eq .chezmoi.osRelease.id "arch" -}}
+#!/bin/bash
+set -e
+
+echo "Installing Arch Linux packages..."
+
+# Install base pacman packages
+packages_list=""
+{{ range .packages.arch.pacman.base -}}
+package={{ . | quote }}
+packages_list="$packages_list $package"
+{{ end -}}
+
+{{- if eq .windowmanager "river" }}
+echo "Adding River window manager packages..."
+{{ range .packages.arch.pacman.river -}}
+package={{ . | quote }}
+packages_list="$packages_list $package"
+{{ end -}}
+{{- end }}
+
+if [ -n "$packages_list" ]; then
+    echo "Installing pacman packages..."
+    sudo pacman -S --noconfirm --needed $packages_list
+fi
+
+# Install base AUR packages
+packages_list=""
+{{ range .packages.arch.aur.base -}}
+package={{ . | quote }}
+packages_list="$packages_list $package"
+{{ end -}}
+
+{{- if eq .windowmanager "river" }}
+echo "Adding River AUR packages..."
+{{ range .packages.arch.aur.river -}}
+package={{ . | quote }}
+packages_list="$packages_list $package"
+{{ end -}}
+{{- end }}
+
+if [ -n "$packages_list" ]; then
+    if command -v yay > /dev/null; then
+        echo "Installing AUR packages with yay..."
+        yay -S --noconfirm --needed $packages_list
+    else
+        echo "Warning: yay is not installed. Skipping AUR packages."
+        echo "Install yay to install: $packages_list"
+    fi
+fi
+
+echo "Package installation completed!"
+{{ end -}}
+
+
+# File: dot_zshenv
+
+export EDITOR="hx"
+export VISUAL="hx"
+export TERMINAL="ghostty"
+export BROWSER="zen-browser"
+
+# default folders
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_SCREENSHOTS_DIR="$HOME/Pictures/screenshots"
+export ZDOTDIR="$HOME/.config/zsh"
+
+
+# File: dot_bashrc
+
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
+
+
+# File: .chezmoi.toml.tmpl
+
+{{- $choices := list "river" "mango" "niri" -}}
+{{- $windowmanager := promptChoiceOnce . "windowmanager" "Which window manager you want to install?" $choices -}}
+[data]
+    windowmanager = {{- $windowmanager | quote -}}
+
+
+# File: .chezmoiignore
+
+# Ignore common or general files here, if necessary
+README.md
+.config/niri
+
+{{- if ne .chezmoi.osRelease.id "arch" -}}
+.config/Brewfile
+{{- end }}
+
+# Ignore MangoWC configs if NOT MangoWC
+{{- if ne .windowmanager "mangowc" }}
+.config/mango/
+.config/quickshell/
+.config/DankMaterialShell/
+.local/state/DankMaterialShell/
+.config/dgop/
+{{- end }}
+
+# Ignore River configs if NOT River
+{{- if ne .windowmanager "river" }}
+.config/waybar/
+.config/mako/
+.config/pipewire/
+.config/wpaperd/
+.config/wleave/
+.config/gtklock/
+.config/xdg-desktop-portal/
+.config/river/
+{{- end }}
