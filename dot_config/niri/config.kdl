@@ -113,7 +113,7 @@ layout {
     tab-indicator {
         width 8
         place-within-column 
-        corner-radius 12
+        corner-radius 0
         length total-proportion=1.0
     }
 }
@@ -195,7 +195,7 @@ window-rule {
 window-rule {
     match app-id=r#"^org\.gnome\."#
     draw-border-with-background false
-    geometry-corner-radius 12
+    geometry-corner-radius 0
     clip-to-geometry true
 }
 window-rule {
@@ -236,7 +236,7 @@ window-rule {
     open-maximized true
 }
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 0
     clip-to-geometry true
 }
 binds {
