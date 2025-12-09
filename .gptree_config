@@ -25,6 +25,6 @@ showIgnoredInTree: false
 # Whether to show only default ignored files in the directory tree while still respecting gitignore
 showDefaultIgnoredInTree: false
 # Previously selected files (when using the -s or --save flag previously)
-previousFiles: .chezmoidata/packages.yaml,.chezmoiscripts/run_once_after_setup-snapper.sh.tmpl,.chezmoiscripts/run_once_before_install-yay.sh.tmpl,.chezmoiscripts/run_onchange_after_mpd-enable.sh,.chezmoiscripts/run_onchange_after_yazi-plugins.sh,.chezmoiscripts/run_onchange_arch-install-packages.sh.tmpl,dot_zshenv,dot_bashrc,.chezmoi.toml.tmpl,.chezmoiignore
+previousFiles: .chezmoi.toml.tmpl,.chezmoiignore,dot_config/mango/config.conf.tmpl
 # Excluded directories (when using the -s or --save flag previously or edited in UI)
 excludeDirs: 
