@@ -1,8 +1,12 @@
 {
   "layer": "top",
   "reload_style_on_change": true,
-  "modules-left": ["river/tags", "custom/player"],
-  "modules-center": [],
+  "modules-left": [
+    {{- if eq .windowmanager "river" }}
+    "river/tags"
+    {{- end }}
+  ],
+  "modules-center": ["custom/player"],
   "modules-right": [
     "custom/record",
     "custom/inbox",
@@ -69,7 +73,9 @@
     "on-click": "mpc toggle",
     "signal": 1,
   },
-  "river/tags": {
-    "hide-vacant": true,
-  },
+  {{- if eq .windowmanager "river" }}
+    "river/tags": {
+      "hide-vacant": true,
+    },
+  {{- end }}
 }

@@ -1,18 +1,16 @@
 # Ignore common or general files here, if necessary
 README.md
 .config/niri
+.config/quickshell/dms
+.config/DankMaterialShell/
+.local/state/DankMaterialShell/
+.config/dgop/
 
-{{- if ne .chezmoi.osRelease.id "arch" -}}
-.config/Brewfile
-{{- end }}
 
 # Ignore MangoWC configs if NOT MangoWC
 {{- if ne .windowmanager "mangowc" }}
 .config/mango/
 .config/quickshell/
-.config/DankMaterialShell/
-.local/state/DankMaterialShell/
-.config/dgop/
 {{- end }}
 
 # Ignore River configs if NOT River

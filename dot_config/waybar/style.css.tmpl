@@ -1,3 +1,5 @@
+{{- $p := .colorScheme.palette -}}
+
 * {
   border: none;
   border-radius: 0px;
@@ -7,11 +9,11 @@
   min-height: 13px;
 }
 
-@define-color background #2E3440;
-@define-color foreground #81A1C1;
-@define-color focused #B48EAD;
-@define-color urgent #BF616A;
-@define-color bluetooth #88C0D0;
+@define-color background #{{ $p.base00 }};
+@define-color foreground #{{ $p.base0D }};
+@define-color focused #{{ $p.base0E }};
+@define-color urgent #{{ $p.base08 }};
+@define-color bluetooth #{{ $p.base0C }};
 
 window#waybar {
   background: @background;
